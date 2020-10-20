@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Inicio</h1>
+        <br/>
+        <div th:if="${cuentas != null and !cuentas.empty}">
+            <table border="1">
+                <tr>
+                    <th>Alias</th>
+                    <th>CBU</th>
+                    <th>Banco</th>
+                </tr>
+                <tr th:each="cuenta : ${cuentas}">
+                    <td th:text="${cuenta.alias}">Mostrar Nombre</td>
+                    <td th:text="${cuenta.cbu}">Mostrar Apellido</td>
+                    <td th:text="${cuenta.banco}">Mostrar Email</td>
+                </tr>
+            </table>
+        </div>
+        <div th:if="${cuentas == null or cuentas.empty}">
+            La lista de personas está vacía
+        </div>
+
+    </body>
+</html>
