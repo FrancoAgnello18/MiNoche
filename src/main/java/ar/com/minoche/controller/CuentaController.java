@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller("/cuentas") // http://localhost:8080/cuentas
+@Controller
+@RequestMapping("/cuentas") // http://localhost:8080/cuentas
 public class CuentaController {
     
     @Autowired
