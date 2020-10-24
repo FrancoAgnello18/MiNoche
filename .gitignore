@@ -1,2 +1,8 @@
 /target/
+bin/
+.settings/
 nbactions.xml
+.classpath
+.factorypath
+.project
+nb-configuration.xml
