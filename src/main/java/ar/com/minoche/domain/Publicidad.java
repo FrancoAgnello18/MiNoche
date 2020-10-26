@@ -1,17 +1,47 @@
-
 package ar.com.minoche.domain;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Publicidad {
+@Table(name = "publicidad")
+public class Publicidad implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // @Column(name = "id_publicidad")
     private int idPublicidad;
+    private int flyer;
+    private Plan_Publicitario promocion;
+    private Evento evento;
+
+    public Publicidad() {
+    }
+
+    public Publicidad(int flyer, Plan_Publicitario promocion, Evento evento) {
+        this.flyer = flyer;
+        this.promocion = promocion;
+        this.evento = evento;
+    }
+
+    public Evento getEvento() {
+        return evento;
+    }
+
+    public void setEvento(Evento evento) {
+        this.evento = evento;
+    }
+
+    public Plan_Publicitario getPromocion() {
+        return promocion;
+    }
+
+    public void setPromocion(Plan_Publicitario promocion) {
+        this.promocion = promocion;
+    }
 
     public int getIdPublicidad() {
         return idPublicidad;
@@ -28,5 +58,4 @@ public class Publicidad {
     public void setFlyer(int flyer) {
         this.flyer = flyer;
     }
-    private int flyer;
 }

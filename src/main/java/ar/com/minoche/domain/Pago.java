@@ -1,16 +1,18 @@
 
 package ar.com.minoche.domain;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Pago {
+@Table(name="pago")
+public class Pago implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // @Column(name = "id_pago")
     private int id_pago;
     private String medio_de_pago;
     private String nombre_apellido;
@@ -20,6 +22,21 @@ public class Pago {
     private int fecha_venc;
     private String cod_pago;
     private int cbu;
+
+    public Pago() {
+    }
+
+    public Pago(String medio_de_pago, String nombre_apellido, int dni, int num_tarjeta, int cod_seguridad, int fecha_venc, String cod_pago, int cbu) {
+        this.medio_de_pago = medio_de_pago;
+        this.nombre_apellido = nombre_apellido;
+        this.dni = dni;
+        this.num_tarjeta = num_tarjeta;
+        this.cod_seguridad = cod_seguridad;
+        this.fecha_venc = fecha_venc;
+        this.cod_pago = cod_pago;
+        this.cbu = cbu;
+    }
+    
 
     public int getId_pago() {
         return id_pago;

@@ -1,18 +1,34 @@
 
 package ar.com.minoche.domain;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Plan_Publicitario {
+@Table(name="plan_publicitario")
+public class Plan_Publicitario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // @Column(name = "id_Plan_Publicitario")
+    
     private int idPlan_Publicitario;
+    private double precio;
+    private int duracion_dias;
+    private String alcance;
 
+    public Plan_Publicitario() {
+    }
+
+    public Plan_Publicitario(double precio, int duracion_dias, String alcance) {
+        this.precio = precio;
+        this.duracion_dias = duracion_dias;
+        this.alcance = alcance;
+    }
+    
+    
     public int getIdPlan_Publicitario() {
         return idPlan_Publicitario;
     }
@@ -44,8 +60,5 @@ public class Plan_Publicitario {
     public void setAlcance(String alcance) {
         this.alcance = alcance;
     }
-    private double precio;
-    private int duracion_dias;
-    private String alcance;
     
 }

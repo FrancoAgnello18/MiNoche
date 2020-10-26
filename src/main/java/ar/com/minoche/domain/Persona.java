@@ -1,16 +1,38 @@
 package ar.com.minoche.domain;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Persona {
+@Table(name = "persona")
+public class Persona implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     // @Column(name = "id_persona")
     private int Id;
+    private String nombre;
+    private String apellido;
+    private int ndocumento;
+    private int celular;
+    private String email;
+    private String contraseña;
+
+    public Persona() {
+    }
+
+    public Persona(String nombre, String apellido, int ndocumento, int celular, String email, String contraseña) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.ndocumento = ndocumento;
+        this.celular = celular;
+        this.email = email;
+        this.contraseña = contraseña;
+    }
 
     public int getId() {
         return Id;
@@ -67,10 +89,5 @@ public class Persona {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-    private String nombre;
-    private String apellido;
-    private int ndocumento;
-    private int celular;
-    private String email;
-    private String contraseña;
+
 }

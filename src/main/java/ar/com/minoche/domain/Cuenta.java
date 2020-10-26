@@ -1,20 +1,47 @@
 package ar.com.minoche.domain;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Cuenta {
+@Table(name = "cuenta")
+public class Cuenta implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // @Column(name = "id_cuenta")
     private Long id;
     private String alias;
     private String cbu;
     private String banco;
+    private Creador_de_Eventos creadorDeEventos;
+
+    public Cuenta(String alias, String cbu, String banco, Creador_de_Eventos creadordeeventos) {
+        this.alias = alias;
+        this.cbu = cbu;
+        this.banco = banco;
+        this.creadorDeEventos = creadordeeventos;
+    }
+
+    public Cuenta() {
+    }
+
+    public Creador_de_Eventos getCreadordeeventos() {
+        return creadorDeEventos;
+    }
+
+    public void setCreadordeeventos(Creador_de_Eventos creadordeeventos) {
+        this.creadorDeEventos = creadordeeventos;
+    }
+
+    public Cuenta(String alias, String cbu, String banco) {
+        this.alias = alias;
+        this.cbu = cbu;
+        this.banco = banco;
+    }
 
     public Long getId() {
         return id;

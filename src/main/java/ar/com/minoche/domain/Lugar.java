@@ -1,15 +1,18 @@
-
 package ar.com.minoche.domain;
+
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Lugar {
+@Table(name = "lugar")
+public class Lugar implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // @Column(name = "id_lugar")
     private int id_lugar;
     private String nombre;
     private String email;
@@ -19,6 +22,20 @@ public class Lugar {
     private String localidad;
     private String provincia;
     private String localizacion;
+
+    public Lugar(String nombre, String email, String telefono, String tipo, String domicilio, String localidad, String provincia, String localizacion) {
+        this.nombre = nombre;
+        this.email = email;
+        this.telefono = telefono;
+        this.tipo = tipo;
+        this.domicilio = domicilio;
+        this.localidad = localidad;
+        this.provincia = provincia;
+        this.localizacion = localizacion;
+    }
+
+    public Lugar() {
+    }
 
     public int getId_lugar() {
         return id_lugar;
@@ -91,5 +108,5 @@ public class Lugar {
     public void setLocalizacion(String localizacion) {
         this.localizacion = localizacion;
     }
-    
+
 }
