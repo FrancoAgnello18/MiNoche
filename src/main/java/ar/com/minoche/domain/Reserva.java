@@ -1,10 +1,13 @@
 package ar.com.minoche.domain;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,9 +19,13 @@ public class Reserva implements Serializable {
     private int id_Reserva;
     private int fecha;
     private int cant_personas;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_evento")
     private Evento evento;
+    
     private Cliente cliente;
-
+    
     public Reserva() {
     }
 

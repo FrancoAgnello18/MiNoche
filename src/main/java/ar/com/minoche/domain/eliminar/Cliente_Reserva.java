@@ -1,5 +1,5 @@
 
-package ar.com.minoche.domain;
+package ar.com.minoche.domain.eliminar;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

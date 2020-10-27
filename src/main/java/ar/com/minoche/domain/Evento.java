@@ -1,10 +1,12 @@
 package ar.com.minoche.domain;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,6 +28,12 @@ public class Evento implements Serializable {
     private int cant_entradas;
     private Creador_de_Eventos creador;
     private Lugar lugar;
+    
+    @OneToMany(mappedBy = "evento")
+    private List<Reserva> reservas;
+    
+    @OneToMany(mappedBy = "evento")
+    private List<Entrada> entradas;
 
     public Evento(String nombre_evento, int fecha, int hora, String telefono_evento, int limite, String tipo, String descripcion, String categoria, int cant_reservas, int cant_entradas, Creador_de_Eventos creador, Lugar lugar) {
         this.nombre_evento = nombre_evento;

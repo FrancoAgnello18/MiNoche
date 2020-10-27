@@ -9,11 +9,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "creador_de_evento")
+// TODO: cambiar nombre de clases
 public class Creador_de_Eventos implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
+    // todo: cambiar nombre de atributo usando camel case (idCreadorDeEventtos)
     private int id_creadordeeventos;
+    // private int id
     private Persona persona;
     private String provincia;
     private String localidad;
