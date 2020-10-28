@@ -16,7 +16,7 @@ public class Reserva implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_Reserva;
+    private Long id;
     private int fecha;
     private int cant_personas;
     
@@ -52,12 +52,12 @@ public class Reserva implements Serializable {
         this.cliente = cliente;
     }
 
-    public int getId_Reserva() {
-        return id_Reserva;
+    public Long getId() {
+        return id;
     }
 
-    public void setId_Reserva(int id_Reserva) {
-        this.id_Reserva = id_Reserva;
+    public void setId_Reserva(Long id) {
+        this.id = id;
     }
 
     public int getFecha() {

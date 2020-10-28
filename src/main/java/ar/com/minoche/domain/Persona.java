@@ -14,7 +14,7 @@ public class Persona implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     // @Column(name = "id_persona")
-    private int Id;
+    private Long id;
     private String nombre;
     private String apellido;
     private int ndocumento;
@@ -34,12 +34,12 @@ public class Persona implements Serializable {
         this.contraseña = contraseña;
     }
 
-    public int getId() {
-        return Id;
+    public Long getId() {
+        return id;
     }
 
-    public void setId(int Id) {
-        this.Id = Id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombre() {

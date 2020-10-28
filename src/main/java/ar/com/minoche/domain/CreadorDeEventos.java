@@ -10,13 +10,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "creador_de_evento")
 // TODO: cambiar nombre de clases
-public class Creador_de_Eventos implements Serializable {
+public class CreadorDeEventos implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     
     // todo: cambiar nombre de atributo usando camel case (idCreadorDeEventtos)
-    private int id_creadordeeventos;
+    private Long id;
     // private int id
     private Persona persona;
     private String provincia;
@@ -24,7 +24,7 @@ public class Creador_de_Eventos implements Serializable {
     private String domicilio;
     private double saldo;
 
-    public Creador_de_Eventos(Persona persona, String provincia, String localidad, String domicilio, double saldo) {
+    public CreadorDeEventos(Persona persona, String provincia, String localidad, String domicilio, double saldo) {
         this.persona = persona;
         this.provincia = provincia;
         this.localidad = localidad;
@@ -32,7 +32,7 @@ public class Creador_de_Eventos implements Serializable {
         this.saldo = saldo;
     }
 
-    public Creador_de_Eventos() {
+    public CreadorDeEventos() {
     }
 
     public Persona getPersona() {
@@ -43,12 +43,12 @@ public class Creador_de_Eventos implements Serializable {
         this.persona = persona;
     }
 
-    public int getId_creadordeeventos() {
-        return id_creadordeeventos;
+    public Long getId_creadordeeventos() {
+        return id;
     }
 
-    public void setId_creadordeeventos(int id_creadordeeventos) {
-        this.id_creadordeeventos = id_creadordeeventos;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getProvincia() {

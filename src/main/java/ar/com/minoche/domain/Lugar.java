@@ -13,7 +13,7 @@ public class Lugar implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_lugar;
+    private Long id;
     private String nombre;
     private String email;
     private String telefono;
@@ -37,12 +37,12 @@ public class Lugar implements Serializable {
     public Lugar() {
     }
 
-    public int getId_lugar() {
-        return id_lugar;
+    public Long getId() {
+        return id;
     }
 
-    public void setId_lugar(int id_lugar) {
-        this.id_lugar = id_lugar;
+    public void setId_lugar(Long id) {
+        this.id = id;
     }
 
     public String getNombre() {

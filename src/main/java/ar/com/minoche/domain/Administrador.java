@@ -13,7 +13,7 @@ public class Administrador implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_Administrador;
+    private Long id;
     private double saldo;
     private Persona persona;
 
@@ -33,12 +33,12 @@ public class Administrador implements Serializable {
         this.persona = persona;
     }
 
-    public int getId_Administrador() {
-        return id_Administrador;
+    public Long getId() {
+        return id;
     }
 
-    public void setId_Administrador(int id_Administrador) {
-        this.id_Administrador = id_Administrador;
+    public void setId_Administrador(Long id) {
+        this.id = id;
     }
 
     public double getSaldo() {

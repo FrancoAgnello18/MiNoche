@@ -17,9 +17,9 @@ public class Cuenta implements Serializable {
     private String alias;
     private String cbu;
     private String banco;
-    private Creador_de_Eventos creadorDeEventos;
+    private CreadorDeEventos creadorDeEventos;
 
-    public Cuenta(String alias, String cbu, String banco, Creador_de_Eventos creadordeeventos) {
+    public Cuenta(String alias, String cbu, String banco, CreadorDeEventos creadordeeventos) {
         this.alias = alias;
         this.cbu = cbu;
         this.banco = banco;
@@ -29,11 +29,11 @@ public class Cuenta implements Serializable {
     public Cuenta() {
     }
 
-    public Creador_de_Eventos getCreadordeeventos() {
+    public CreadorDeEventos getCreadordeeventos() {
         return creadorDeEventos;
     }
 
-    public void setCreadordeeventos(Creador_de_Eventos creadordeeventos) {
+    public void setCreadordeeventos(CreadorDeEventos creadordeeventos) {
         this.creadorDeEventos = creadordeeventos;
     }
 

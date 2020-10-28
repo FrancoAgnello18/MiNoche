@@ -10,31 +10,31 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="plan_publicitario")
-public class Plan_Publicitario implements Serializable {
+public class PlanPublicitario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     
-    private int idPlan_Publicitario;
+    private Long id;
     private double precio;
     private int duracion_dias;
     private String alcance;
 
-    public Plan_Publicitario() {
+    public PlanPublicitario() {
     }
 
-    public Plan_Publicitario(double precio, int duracion_dias, String alcance) {
+    public PlanPublicitario(double precio, int duracion_dias, String alcance) {
         this.precio = precio;
         this.duracion_dias = duracion_dias;
         this.alcance = alcance;
     }
     
     
-    public int getIdPlan_Publicitario() {
-        return idPlan_Publicitario;
+    public Long getIdPlan_Publicitario() {
+        return id;
     }
 
-    public void setIdPlan_Publicitario(int idPlan_Publicitario) {
-        this.idPlan_Publicitario = idPlan_Publicitario;
+    public void setIdPlan_Publicitario(Long id) {
+        this.id = id;
     }
 
     public double getPrecio() {

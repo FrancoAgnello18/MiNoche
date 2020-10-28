@@ -15,7 +15,7 @@ public class Evento implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_Evento;
+    private Long id;
     private String nombre_evento;
     private int fecha;
     private int hora;
@@ -26,16 +26,16 @@ public class Evento implements Serializable {
     private String categoria;
     private int cant_reservas;
     private int cant_entradas;
-    private Creador_de_Eventos creador;
+    private CreadorDeEventos creador;
     private Lugar lugar;
-    
+
     @OneToMany(mappedBy = "evento")
     private List<Reserva> reservas;
-    
+
     @OneToMany(mappedBy = "evento")
     private List<Entrada> entradas;
 
-    public Evento(String nombre_evento, int fecha, int hora, String telefono_evento, int limite, String tipo, String descripcion, String categoria, int cant_reservas, int cant_entradas, Creador_de_Eventos creador, Lugar lugar) {
+    public Evento(String nombre_evento, int fecha, int hora, String telefono_evento, int limite, String tipo, String descripcion, String categoria, int cant_reservas, int cant_entradas, CreadorDeEventos creador, Lugar lugar) {
         this.nombre_evento = nombre_evento;
         this.fecha = fecha;
         this.hora = hora;
@@ -53,11 +53,11 @@ public class Evento implements Serializable {
     public Evento() {
     }
 
-    public Creador_de_Eventos getCreador() {
+    public CreadorDeEventos getCreador() {
         return creador;
     }
 
-    public void setCreador(Creador_de_Eventos creador) {
+    public void setCreador(CreadorDeEventos creador) {
         this.creador = creador;
     }
 
@@ -69,12 +69,12 @@ public class Evento implements Serializable {
         this.lugar = lugar;
     }
 
-    public int getId_Evento() {
-        return id_Evento;
+    public Long getId() {
+        return id;
     }
 
-    public void setId_Evento(int id_Evento) {
-        this.id_Evento = id_Evento;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombre_evento() {

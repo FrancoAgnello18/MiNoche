@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class Pago implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_pago;
+    private Long id;
     private String medio_de_pago;
     private String nombre_apellido;
     private int dni;
@@ -38,12 +38,12 @@ public class Pago implements Serializable {
     }
     
 
-    public int getId_pago() {
-        return id_pago;
+    public Long getId() {
+        return id;
     }
 
-    public void setId_pago(int id_pago) {
-        this.id_pago = id_pago;
+    public void setId_pago(Long id) {
+        this.id = id;
     }
 
     public String getMedio_de_pago() {

@@ -13,15 +13,15 @@ public class Publicidad implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idPublicidad;
+    private Long id;
     private int flyer;
-    private Plan_Publicitario promocion;
+    private PlanPublicitario promocion;
     private Evento evento;
 
     public Publicidad() {
     }
 
-    public Publicidad(int flyer, Plan_Publicitario promocion, Evento evento) {
+    public Publicidad(int flyer, PlanPublicitario promocion, Evento evento) {
         this.flyer = flyer;
         this.promocion = promocion;
         this.evento = evento;
@@ -35,20 +35,20 @@ public class Publicidad implements Serializable {
         this.evento = evento;
     }
 
-    public Plan_Publicitario getPromocion() {
+    public PlanPublicitario getPromocion() {
         return promocion;
     }
 
-    public void setPromocion(Plan_Publicitario promocion) {
+    public void setPromocion(PlanPublicitario promocion) {
         this.promocion = promocion;
     }
 
-    public int getIdPublicidad() {
-        return idPublicidad;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdPublicidad(int idPublicidad) {
-        this.idPublicidad = idPublicidad;
+    public void setIdPublicidad(Long id) {
+        this.id = id;
     }
 
     public int getFlyer() {
