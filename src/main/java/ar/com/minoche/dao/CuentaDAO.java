@@ -4,7 +4,7 @@ import ar.com.minoche.domain.Cuenta;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
-public interface CuentaDAO  {
+public interface CuentaDAO {
 
     void insertCuenta(Cuenta cuenta);
 
@@ -18,6 +18,4 @@ public interface CuentaDAO  {
 
     long contadorCuentas();
 
-  
 }
-
