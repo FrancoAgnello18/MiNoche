@@ -5,4 +5,9 @@ import java.util.List;
 
 public interface CuentaService {
     List<Cuenta> findAllCuentas();
+    Cuenta findCuentaById(Long id);
+    // save
+    // update
+    Cuenta updateCuenta(Cuenta cuenta);
+    // delete
 }

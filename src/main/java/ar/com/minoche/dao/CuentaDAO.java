@@ -1,21 +1,15 @@
 package ar.com.minoche.dao;
 
 import ar.com.minoche.domain.Cuenta;
-import java.util.List;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-public interface CuentaDAO {
+public interface CuentaDAO extends CrudRepository<Cuenta, Long> {
 
-    void insertCuenta(Cuenta cuenta);
-
-    void updateCuenta(Cuenta cuenta);
-
-    void deleteCuenta(Cuenta cuenta);
-
-    Cuenta findCuentaById(long id);
-
-    List<Cuenta> findAllCuentas();
-
-    long contadorCuentas();
-
+    // por query
+    @Query("select c from Cuenta c where c.cbu = ?1")
+    Cuenta buscarCuentaPorCbu(String cbu);
+    
+    // por nombre de métoo
+    Cuenta findCuentaByCbu(String cbu);
 }
