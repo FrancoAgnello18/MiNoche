@@ -23,10 +23,9 @@ public class Entrada implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private String cod_qr;
     private String precio;
-    private String sexo;
     
     @ManyToOne
     @JoinColumn(name = "id_evento")
@@ -36,4 +35,7 @@ public class Entrada implements Serializable {
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
+    @ManyToOne
+    @JoinColumn(name = "id_pago")
+    private Pago pago;
 }
