@@ -1,20 +1,8 @@
 package ar.com.minoche.dao;
 
 import ar.com.minoche.domain.Entrada;
-import java.util.List;
+import org.springframework.data.repository.CrudRepository;
 
-public interface EntradaDAO {
-
-    void insertEntrada(Entrada entrada);
-
-    void updateEntrada(Entrada entrada);
-
-    void deleteEntrada(Entrada entrada);
-
-    Entrada findEntradaById(long id);
-
-    List<Entrada> findAllEntradas();
-
-    long contadorEntradas();
+public interface EntradaDAO extends CrudRepository <Entrada, Long> {
 
 }

@@ -2,20 +2,8 @@
 package ar.com.minoche.dao;
 
 import ar.com.minoche.domain.Reserva;
-import java.util.List;
+import org.springframework.data.repository.CrudRepository;
 
-public interface ReservaDAO {
-    
-    void insertReserva(Reserva reserva);
+public interface ReservaDAO extends CrudRepository <Reserva, Long> {
 
-    void updateReserva(Reserva reserva);
-
-    void deleteReserva(Reserva reserva);
-
-    Reserva findReservaById(long id);
-
-    List<Reserva> findAllReservas();
-
-    long contadorReservas();
-    
 }

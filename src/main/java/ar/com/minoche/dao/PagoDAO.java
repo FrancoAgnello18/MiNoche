@@ -2,21 +2,8 @@
 package ar.com.minoche.dao;
 
 import ar.com.minoche.domain.Pago;
-import java.util.List;
+import org.springframework.data.repository.CrudRepository;
 
+public interface PagoDAO extends CrudRepository <Pago, Long> {
 
-public interface PagoDAO {
-    
-    void insertPago(Pago pago);
-
-    void updatePago(Pago pago);
-
-    void deletePago(Pago pago);
-
-    Pago findPagoById(long id);
-
-    List<Pago> findAllPagos();
-
-    long contadorPagos();
-    
 }
