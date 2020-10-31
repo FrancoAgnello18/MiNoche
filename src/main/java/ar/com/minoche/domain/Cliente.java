@@ -38,5 +38,5 @@ public class Cliente implements Serializable {
     private List<Reserva> reservas;
 
     @OneToOne(mappedBy = "cliente")
-    private List<Persona> personas;
+    private Persona persona;
 }

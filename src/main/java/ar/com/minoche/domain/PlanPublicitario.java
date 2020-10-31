@@ -32,7 +32,7 @@ public class PlanPublicitario implements Serializable {
     private String alcance;
 
     @ManyToOne
-    @JoinColumn(name = "id_administrador")
+    @JoinColumn(name = "administrador")
     private Administrador administrador;
     
     @OneToMany(mappedBy = "planPublicitario")

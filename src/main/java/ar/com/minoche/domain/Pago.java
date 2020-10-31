@@ -2,10 +2,12 @@
 package ar.com.minoche.domain;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -32,9 +34,9 @@ public class Pago implements Serializable {
     private String codPago;
     private int cbu;
 
-    @OneToMany(mappedBy = "pago")
-    private Entrada entradas;
+    @ManyToMany(mappedBy = "pago")
+    private List<Entrada> entradas;
     
-    @OneToMany(mappedBy = "pago")
-    private Reserva reservas;   
+    @ManyToMany(mappedBy = "pago")
+    private List<Reserva> reservas;   
 }

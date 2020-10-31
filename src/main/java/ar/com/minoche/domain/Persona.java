@@ -32,15 +32,4 @@ public class Persona implements Serializable {
     private String email;
     private String contraseña;
 
-    @OneToOne
-    @JoinColumn(name = "id_creadorDeEventos")
-    private CreadorDeEventos creadorDeEventos;
-    
-    @OneToOne
-    @JoinColumn(name = "id_administrador")
-    private Administrador administrador;
-     
-    @OneToOne
-    @JoinColumn(name = "id_cliente")
-    private Cliente clientes;
 }

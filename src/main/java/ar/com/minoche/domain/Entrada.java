@@ -28,14 +28,14 @@ public class Entrada implements Serializable {
     private String precio;
     
     @ManyToOne
-    @JoinColumn(name = "id_evento")
+    @JoinColumn(name = "evento")
     private Evento evento;
 
     @ManyToOne
-    @JoinColumn(name = "id_cliente")
+    @JoinColumn(name = "cliente")
     private Cliente cliente;
 
     @ManyToOne
-    @JoinColumn(name = "id_pago")
+    @JoinColumn(name = "pago")
     private Pago pago;
 }

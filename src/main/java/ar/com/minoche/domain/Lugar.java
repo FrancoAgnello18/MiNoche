@@ -34,6 +34,6 @@ public class Lugar implements Serializable {
     private String localizacion;
 
     @OneToOne
-    @JoinColumn(name = "id_evento")
-    private Evento eventos;
+    @JoinColumn(name = "evento")
+    private Evento evento;
 }

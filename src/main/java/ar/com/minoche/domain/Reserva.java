@@ -30,14 +30,14 @@ public class Reserva implements Serializable {
     private int horario;
     
     @ManyToOne
-    @JoinColumn(name = "id_evento")
-    private Evento eventos;
+    @JoinColumn(name = "evento")
+    private Evento evento;
     
     @ManyToOne
-    @JoinColumn(name = "id_pago")
-    private Pago pagos;
+    @JoinColumn(name = "pago")
+    private Pago pago;
     
     @ManyToOne
-    @JoinColumn(name = "id_cliente")
-    private Cliente clientes;
+    @JoinColumn(name = "cliente")
+    private Cliente cliente;
 }

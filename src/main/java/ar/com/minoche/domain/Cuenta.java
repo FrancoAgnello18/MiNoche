@@ -29,6 +29,6 @@ public class Cuenta implements Serializable {
     private String banco;
    
     @OneToOne
-    @JoinColumn(name = "id_creadorDeEventos")
-    private CreadorDeEventos creadorDeEventos;   
+    @JoinColumn(name = "creadorDeEvento")
+    private CreadorDeEvento creadorDeEvento;   
 }

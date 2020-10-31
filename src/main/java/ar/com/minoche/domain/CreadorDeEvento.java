@@ -19,19 +19,24 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "administrador")
-public class Administrador implements Serializable {
+@Table(name = "creadorDeEvento")
+
+public class CreadorDeEvento implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)   
     private int id;
+    private String provincia;
+    private String localidad;
+    private String domicilio;
     private double saldo;
-    
 
-    @OneToOne(mappedBy = "administrador")
+    @OneToOne(mappedBy = "creadorDeEventos")
     private Persona persona;
     
-    @OneToMany(mappedBy = "administrador")
-    private List<PlanPublicitario> planPublicitarios;
+    @OneToOne(mappedBy = "creadorDeEventos")
+    private Cuenta cuenta;
     
+    @OneToMany (mappedBy = "creadorDeEventos")
+    private List<Evento> eventos;
 }
