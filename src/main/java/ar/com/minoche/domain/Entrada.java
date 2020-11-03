@@ -23,7 +23,7 @@ public class Entrada implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String cod_qr;
     private String precio;
     

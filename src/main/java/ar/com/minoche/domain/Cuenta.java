@@ -1,3 +1,4 @@
+
 package ar.com.minoche.domain;
 
 import java.io.Serializable;

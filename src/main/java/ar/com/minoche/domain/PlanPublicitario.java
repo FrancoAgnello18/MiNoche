@@ -26,7 +26,7 @@ public class PlanPublicitario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     
-    private int id;
+    private Long id;
     private double precio;
     private int duracion_dias;
     private String alcance;

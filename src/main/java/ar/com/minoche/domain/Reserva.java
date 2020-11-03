@@ -23,7 +23,7 @@ public class Reserva implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private int fecha;
     private int cantPersonas;
     private String cod_qr;

@@ -25,7 +25,7 @@ public class CreadorDeEvento implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)   
-    private int id;
+    private Long id;
     private String provincia;
     private String localidad;
     private String domicilio;

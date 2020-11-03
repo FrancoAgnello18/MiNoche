@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
 public class Pago implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String medioDePago;
     private String nombreApellido;
     private int dni;
