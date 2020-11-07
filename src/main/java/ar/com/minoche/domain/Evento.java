@@ -48,9 +48,10 @@ public class Evento implements Serializable {
     private List<Publicidad> publicidades;
     
     @ManyToOne
-    @JoinColumn(name = "creadorDeEventos")
+    @JoinColumn(name = "id_creador_evento")
     private CreadorDeEvento creadorDeEvento;
     
-    @OneToOne(mappedBy = "evento")
+    @OneToOne
+    @JoinColumn(name = "id_lugar")
     private Lugar lugar;
 }

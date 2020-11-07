@@ -34,9 +34,5 @@ public class Pago implements Serializable {
     private String codPago;
     private int cbu;
 
-    @ManyToMany(mappedBy = "pago")
-    private List<Entrada> entradas;
-    
-    @ManyToMany(mappedBy = "pago")
-    private List<Reserva> reservas;   
+ 
 }

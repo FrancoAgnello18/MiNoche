@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,14 +29,14 @@ public class Entrada implements Serializable {
     private String precio;
     
     @ManyToOne
-    @JoinColumn(name = "evento")
+    @JoinColumn(name = "id_evento")
     private Evento evento;
 
     @ManyToOne
-    @JoinColumn(name = "cliente")
+    @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
-    @ManyToOne
-    @JoinColumn(name = "pago")
+    @OneToOne
+    @JoinColumn(name = "id_pago")
     private Pago pago;
 }

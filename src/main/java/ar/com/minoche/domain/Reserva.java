@@ -30,7 +30,7 @@ public class Reserva implements Serializable {
     private int horario;
     
     @ManyToOne
-    @JoinColumn(name = "evento")
+    @JoinColumn(name = "id_evento")
     private Evento evento;
     
     @ManyToOne
