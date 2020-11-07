@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Inicio</title>
         <meta charset="UTF-8">
@@ -8,6 +7,7 @@
     <body>
         <h1>Inicio</h1>
         <br/>
+        <a th:href="@{/agregar}">Crear Cuenta</a>
         <div th:if="${cuentas != null and !cuentas.empty}">
             <table border="1">
                 <tr>
@@ -16,14 +16,17 @@
                     <th>Banco</th>
                 </tr>
                 <tr th:each="cuenta : ${cuentas}">
-                    <td th:text="${cuenta.alias}">Mostrar Nombre</td>
-                    <td th:text="${cuenta.cbu}">Mostrar Apellido</td>
-                    <td th:text="${cuenta.banco}">Mostrar Email</td>
+                    <td th:text="${cuenta.alias}">Mostrar alias</td>
+                    <td th:text="${cuenta.cbu}">Mostrar cbu</td>
+                    <td th:text="${cuenta.banco}">Mostrar banco</td>
+                    <td><a th:href="@{editar/} + ${cuenta.idCuenta}" th:text="Editar"/></td>
+                    <td><a th:href="@{eliminar(idCuenta=${cuenta.idCuenta})}" th:text="Eliminar"/></td>
+                    
                 </tr>
             </table>
         </div>
         <div th:if="${cuentas == null or cuentas.empty}">
-            La lista de personas está vacía
+            La lista de cuentas está vacía
         </div>
 
     </body>
