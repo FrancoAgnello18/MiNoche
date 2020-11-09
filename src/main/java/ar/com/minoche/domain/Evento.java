@@ -67,7 +67,7 @@ public class Evento implements Serializable {
     List<Entrada> entradaList;
 
     @OneToMany(mappedBy = "evento")
-    List<Publicidad> publicidad;
+    List<Publicidad> publicidadList;
     
     @ManyToOne
     @JoinColumn(name = "id_creadorDeEvento")
