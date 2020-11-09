@@ -3,6 +3,7 @@ package ar.com.minoche.domain;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,16 +26,22 @@ import lombok.NoArgsConstructor;
 public class PlanPublicitario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
+    @Column
     private Long id;
+    
+    @Column
     private double precio;
-    private int duracion_dias;
+    
+    @Column
+    private int duracionDias;
+    
+    @Column
     private String alcance;
 
     @ManyToOne
     @JoinColumn(name = "administrador")
-    private Administrador administrador;
+    Administrador administrador;
     
     @OneToMany(mappedBy = "planPublicitario")
-    private List<Publicidad> publicidad;
+    List<Publicidad> publicidadList;
 }

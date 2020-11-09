@@ -2,13 +2,12 @@ package ar.com.minoche.domain;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,20 +24,27 @@ public class Cliente implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long Id;
+    
+    @Column
     private String sexo;
+    
+    @Column
     private String provincia;
+    
+    @Column
     private String localidad;
+    
+    @Column
     private String domicilio;
+    
+    @Column
     private String localizacion;
     
     @OneToMany(mappedBy = "cliente")
-    private List<Entrada> entradas;
+    List<Entrada> entradas;
     
     @OneToMany(mappedBy = "cliente")
-    private List<Reserva> reservas;
-
-    @OneToOne
-    @JoinColumn(name = "id_persona")
-    private Persona persona;
+    List<Reserva> reservas;
 }

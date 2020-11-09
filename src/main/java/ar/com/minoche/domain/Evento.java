@@ -2,6 +2,7 @@ package ar.com.minoche.domain;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,32 +27,53 @@ public class Evento implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
+    
+    @Column
     private String nombreEvento;
+    
+    @Column
     private int fecha;
+    
+    @Column
     private int hora;
+    
+    @Column
     private String telefonoEvento;
+    
+    @Column
     private int limite;
+    
+    @Column
     private String tipo;
+    
+    @Column
     private String descripcion;
+    
+    @Column
     private String categoria;
+    
+    @Column
     private int cantReservas;
+    
+    @Column
     private int cantEntradas;
     
     @OneToMany(mappedBy = "evento")
-    private List<Reserva> reservas;
+    List<Reserva> reserva;
     
     @OneToMany(mappedBy = "evento")
-    private List<Entrada> entradas;
+    List<Entrada> entrada;
 
     @OneToMany(mappedBy = "evento")
-    private List<Publicidad> publicidades;
+    List<Publicidad> publicidad;
     
     @ManyToOne
-    @JoinColumn(name = "id_creador_evento")
-    private CreadorDeEvento creadorDeEvento;
+    @JoinColumn(name = "id_creadorDeEvento")
+    CreadorDeEvento creadorDeEvento;
     
     @OneToOne
     @JoinColumn(name = "id_lugar")
-    private Lugar lugar;
+    Lugar lugar;
 }

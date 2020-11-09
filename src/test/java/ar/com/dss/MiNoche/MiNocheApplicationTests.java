@@ -14,6 +14,6 @@ class MiNocheApplicationTests {
 
         @Test
         void crearEntrada() {
-            Entrada entrada = Entrada.builder().cod_qr("asdas").cliente(new Cliente()).build();
+            Entrada entrada = Entrada.builder().codQr("asdas").cliente(new Cliente()).build();
         }
 }

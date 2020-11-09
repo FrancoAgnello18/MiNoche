@@ -2,6 +2,7 @@ package ar.com.minoche.domain;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,15 +26,13 @@ public class Administrador implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
+    
+    @Column
     private double saldo;
     
-
-    @OneToOne
-    @JoinColumn(name = "id_persona")
-    private Persona persona;
-    
     @OneToMany(mappedBy = "administrador")
-    private List<PlanPublicitario> planPublicitarios;
+    List<PlanPublicitario> planPublicitarioList;
     
 }

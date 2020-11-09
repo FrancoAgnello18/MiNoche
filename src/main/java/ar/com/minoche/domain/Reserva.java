@@ -1,6 +1,7 @@
 package ar.com.minoche.domain;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,21 +24,30 @@ public class Reserva implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
+    
+    @Column
     private int fecha;
+    
+    @Column
     private int cantPersonas;
-    private String cod_qr;
+    
+    @Column
+    private String codQr;
+    
+    @Column
     private int horario;
     
     @ManyToOne
     @JoinColumn(name = "id_evento")
-    private Evento evento;
+    Evento evento;
     
     @ManyToOne
-    @JoinColumn(name = "pago")
-    private Pago pago;
+    @JoinColumn(name = "id_cliente")
+    Cliente cliente;
     
     @ManyToOne
-    @JoinColumn(name = "cliente")
-    private Cliente cliente;
+    @JoinColumn(name = "id_pago")
+    Pago pago;
 }

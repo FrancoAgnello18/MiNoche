@@ -1,6 +1,7 @@
 package ar.com.minoche.domain;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,14 +24,17 @@ public class Publicidad implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Long id;
+    
+    @Column
     private int flyer;
 
     @ManyToOne
-    @JoinColumn(name = "planPublicitario")
-    private PlanPublicitario planPublicitario;
+    @JoinColumn(name = "id_planPublicitario")
+    PlanPublicitario planPublicitario;
     
     @ManyToOne
-    @JoinColumn(name = "evento")
-    private Evento evento;
+    @JoinColumn(name = "id_evento")
+    Evento evento;
 }
