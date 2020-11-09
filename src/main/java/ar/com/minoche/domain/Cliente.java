@@ -43,8 +43,8 @@ public class Cliente implements Serializable {
     private String localizacion;
     
     @OneToMany(mappedBy = "cliente")
-    List<Entrada> entradas;
+    List<Entrada> entradaList;
     
     @OneToMany(mappedBy = "cliente")
-    List<Reserva> reservas;
+    List<Reserva> reservasList;
 }

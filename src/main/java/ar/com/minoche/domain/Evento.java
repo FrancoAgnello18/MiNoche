@@ -61,10 +61,10 @@ public class Evento implements Serializable {
     private int cantEntradas;
     
     @OneToMany(mappedBy = "evento")
-    List<Reserva> reserva;
+    List<Reserva> reservaList;
     
     @OneToMany(mappedBy = "evento")
-    List<Entrada> entrada;
+    List<Entrada> entradaList;
 
     @OneToMany(mappedBy = "evento")
     List<Publicidad> publicidad;
