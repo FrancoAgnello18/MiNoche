@@ -24,7 +24,6 @@ public class Publicidad implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private Long id;
     
     @Column

@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,7 +26,6 @@ import lombok.NoArgsConstructor;
 public class Pago implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private Long id;
     
     @Column
@@ -52,9 +52,7 @@ public class Pago implements Serializable {
     @Column
     private int cbu;
 
-    @OneToMany(mappedBy = "pago")
-    List<Reserva> reservaList;
     
-    @OneToMany(mappedBy = "Pago")
+    @OneToMany(mappedBy = "pago")
     List<Entrada> entradaList;
 }

@@ -9,12 +9,12 @@ public interface PersonaDAO extends CrudRepository<Persona, Long> {
 
     Persona findPersonaByApellido(String apellido);
 
-    Persona findPersonaByNDocuemento(int ndocumento);
+    Persona findPersonaByDocumento(int documento);
 
     Persona findPersonaByCelular(int celular);
 
     Persona findPersonaByEmail(String email);
 
-    Persona findPersonaByContraseña(String contraseña);
+    Persona findPersonaByContrasenia(String contrasenia);
 
 }

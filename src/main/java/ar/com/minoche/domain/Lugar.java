@@ -22,7 +22,6 @@ public class Lugar implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private Long id;
     
     @Column

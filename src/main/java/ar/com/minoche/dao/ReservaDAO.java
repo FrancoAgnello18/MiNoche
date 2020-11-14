@@ -9,7 +9,7 @@ public interface ReservaDAO extends CrudRepository<Reserva, Long> {
 
     Reserva findReservaByCantPersonas(int cantPersonas);
 
-    Reserva findReservaByCod_Qr(String cod_qr);
+    Reserva findReservaByCodQr(String cod_qr);
 
     Reserva findReservaByHorario(int horario);
 

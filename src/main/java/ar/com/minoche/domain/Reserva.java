@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,7 +25,6 @@ public class Reserva implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private Long id;
     
     @Column
@@ -47,7 +47,7 @@ public class Reserva implements Serializable {
     @JoinColumn(name = "id_cliente")
     Cliente cliente;
     
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "id_pago")
     Pago pago;
 }

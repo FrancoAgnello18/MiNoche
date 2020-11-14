@@ -7,7 +7,7 @@ public interface PlanPublicitarioDAO extends CrudRepository<PlanPublicitario, Lo
 
     PlanPublicitario findPlanPublicitarioByPrecio(Double precio);
 
-    PlanPublicitario findPlanPublicitarioByDuracion_Dias(int duracion_dias);
+    PlanPublicitario findPlanPublicitarioByDuracionDias(int duracion_dias);
 
     PlanPublicitario findPlanPublicitarioByAlcance(String alcance);
 

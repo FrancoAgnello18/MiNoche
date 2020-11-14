@@ -16,5 +16,6 @@ public interface CuentaDAO extends CrudRepository<Cuenta, Long> {
     Cuenta findCuentaByCbu(String cbu);
     
     Cuenta findCuentaByBanco (String banco);
+    
 
 }

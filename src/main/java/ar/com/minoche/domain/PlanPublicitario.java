@@ -26,7 +26,6 @@ import lombok.NoArgsConstructor;
 public class PlanPublicitario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private Long id;
     
     @Column
