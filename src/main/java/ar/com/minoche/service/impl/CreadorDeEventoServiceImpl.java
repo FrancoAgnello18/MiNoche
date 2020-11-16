@@ -16,23 +16,23 @@ public class CreadorDeEventoServiceImpl implements CreadorDeEventoService{
     
     @Override
     @Transactional(readOnly = true)
-    public List<CreadorDeEvento> listarCreador() {
+    public List<CreadorDeEvento> listarCreadoresDeEventos() {
         return (List<CreadorDeEvento>) creadorDeEventosDAO.findAll();
     }
 
     @Override
-    public void guardar(CreadorDeEvento creador) {
-        creadorDeEventosDAO.save(creador);
+    public void guardar(CreadorDeEvento creadorDeEvento) {
+        creadorDeEventosDAO.save(creadorDeEvento);
     }
 
     @Override
-    public void eliminar(CreadorDeEvento creador) {
-        creadorDeEventosDAO.delete(creador);
+    public void eliminar(CreadorDeEvento creadorDeEvento) {
+        creadorDeEventosDAO.delete(creadorDeEvento);
     }
 
     @Override
-    public CreadorDeEvento encontrarCliente(CreadorDeEvento creador) {
-        return creadorDeEventosDAO.findById(creador.getId()).orElse(null);
+    public CreadorDeEvento encontrarCreadorDeEvento(CreadorDeEvento creadorDeEvento) {
+        return creadorDeEventosDAO.findById(creadorDeEvento.getId()).orElse(null);
     }
     
 }

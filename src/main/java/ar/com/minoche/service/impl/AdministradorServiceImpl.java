@@ -16,7 +16,7 @@ public class AdministradorServiceImpl implements AdministradorService{
     
     @Override
     @Transactional(readOnly = true)
-    public List<Administrador> listarAdministrador() {
+    public List<Administrador> listarAdministradores() {
         return (List<Administrador>) administradorDAO.findAll();
     }
 

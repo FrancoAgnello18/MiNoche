@@ -9,5 +9,5 @@ public interface LugarService {
     
     public void guardar (Lugar lugar);
     public void eliminar (Lugar lugar);
-    public Lugar encontrarCuenta(Lugar lugar);
+    public Lugar encontrarLugar(Lugar lugar);
 }

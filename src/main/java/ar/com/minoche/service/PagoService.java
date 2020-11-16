@@ -9,5 +9,5 @@ public interface PagoService {
     
     public void guardar (Pago pago);
     public void eliminar (Pago pago);
-    public Pago encontrarEvento(Pago pago);
+    public Pago encontrarPago(Pago pago);
 }

@@ -16,7 +16,7 @@ public class CuentaServiceImpl implements CuentaService {
     
     @Override
     @Transactional(readOnly = true)
-    public List<Cuenta> listarCuenta() {
+    public List<Cuenta> listarCuentas() {
         return (List<Cuenta>) cuentaDAO.findAll();
     }
 

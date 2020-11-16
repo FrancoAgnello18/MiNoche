@@ -5,7 +5,7 @@ import ar.com.minoche.domain.Administrador;
 import java.util.List;
 
 public interface AdministradorService {
-    List<Administrador> listarAdministrador();
+    List<Administrador> listarAdministradores();
     
     public void guardar (Administrador administrador);
     public void eliminar (Administrador administrador);

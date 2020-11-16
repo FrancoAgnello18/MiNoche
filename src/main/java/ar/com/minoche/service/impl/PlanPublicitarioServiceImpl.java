@@ -34,7 +34,7 @@ public class PlanPublicitarioServiceImpl implements PlanPublicitarioService{
 
     @Override
     @Transactional
-    public PlanPublicitario encontrarEvento(PlanPublicitario planPublicitario) {
+    public PlanPublicitario encontrarPlanPublicitario(PlanPublicitario planPublicitario) {
         return planpublicitarioDAO.findById(planPublicitario.getId()).orElse(null);
     }
     

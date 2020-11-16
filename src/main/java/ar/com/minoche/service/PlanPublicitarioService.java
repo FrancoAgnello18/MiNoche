@@ -8,5 +8,5 @@ public interface PlanPublicitarioService {
     
     public void guardar (PlanPublicitario planPublicitario);
     public void eliminar (PlanPublicitario planPublicitario);
-    public PlanPublicitario encontrarEvento(PlanPublicitario planPublicitario);
+    public PlanPublicitario encontrarPlanPublicitario(PlanPublicitario planPublicitario);
 }

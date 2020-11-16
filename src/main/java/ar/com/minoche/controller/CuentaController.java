@@ -20,7 +20,7 @@ public class CuentaController {
     public String index(Model model) {
         //List<Cuenta> cuentas = cuentaService.listarCuenta();
         log.info("ejecutando el controlador Spring MVC");
-        model.addAttribute("cuentas", cuentaService.listarCuenta());
+        model.addAttribute("cuentas", cuentaService.listarCuentas());
         return "index"; //http://localhost:8080/cuentas/list
     }
     
