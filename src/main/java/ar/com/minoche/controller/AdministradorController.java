@@ -34,7 +34,7 @@ public class AdministradorController {
         return "redirect:/";
     }
     
-    @GetMapping("/editar/{idAdministrador}")
+    @GetMapping("/editar/{id}")
     public String editar (Administrador administrador, Model model){
         administrador = administradorService.encontrarAdministrador(administrador);
         model.addAttribute("administrador", administrador);

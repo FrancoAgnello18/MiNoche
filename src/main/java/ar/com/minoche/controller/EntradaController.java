@@ -33,7 +33,7 @@ public class EntradaController {
         return "redirect:/";
     }
     
-    @GetMapping("/editar/{idEntrada}")
+    @GetMapping("/editar/{id}")
     public String editar (Entrada entrada, Model model){
         entrada = entradaService.encontrarEntrada(entrada);
         model.addAttribute("entrada", entrada);

@@ -33,7 +33,7 @@ public class LugarController {
         return "redirect:/";
     }
     
-    @GetMapping("/editar/{idLugar}")
+    @GetMapping("/editar/{id}")
     public String editar (Lugar lugar, Model model){
         lugar = lugarService.encontrarLugar(lugar);
         model.addAttribute("lugar", lugar);

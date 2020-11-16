@@ -33,7 +33,7 @@ public class PublicidadController {
         return "redirect:/";
     }
     
-    @GetMapping("/editar/{idPublicidad}")
+    @GetMapping("/editar/{id}")
     public String editar (Publicidad publicidad, Model model){
         publicidad = publicidadService.encontrarPublicidad(publicidad);
         model.addAttribute("publicidad", publicidad);

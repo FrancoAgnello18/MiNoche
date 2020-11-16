@@ -1,52 +1,40 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
-      <title>Datos del Cliente</title>
+      <title>Datos de la Reserva</title>
         <meta charset="UTF-8">
     </head>
     <body>
-        <h1>Datos del Cliente</h1>
+        <h1>Datos de la Reserva</h1>
         <a th:href="@{/}">Regresar</a>
         <br/>
-        <form th:action="@{/guardar}" method="post" th:object="${cliente}">
+        <form th:action="@{/guardar}" method="post" th:object="${reserva}">
             <input type="hidden" name="id" th:field="*{id}"/>
             <br/>
-            <label for="nombre">Nombre: </label>
-            <input type="text" name="nombre" th:field="*{nombre}"/>
+            <label for="fecha">Fecha: </label>
+            <input type="text" name="fecha" th:field="*{fecha}"/>
             <br/>
-            <label for="apellido">Apellido: </label>
-            <input type="text" name="apellido" th:field="*{apellido}"/>
+            <label for="cantPersonas">Cantidad de Personas: </label>
+            <input type="numbre" name="cantPersonas" th:field="*{cantPersonas}"/>
             <br/>
-            <label for="celular">Celular: </label>
-            <input type="tel" name="celular" th:field="*{celular}"/>
-            <br/>
-            <br/>
-            <label for="email">Email: </label>
-            <input type="email" name="email" th:field="*{email}"/>
+            <label for="codQr">Codigo QR: </label>
+            <input type="text" name="codQr" th:field="*{codQr}"/>
             <br/>
             <br/>
-            <label for="documento">Documento: </label>
-            <input type="number" name="documento" th:field="*{documento}"/>
+            <label for="horario">Horario: </label>
+            <input type="text" name="horario" th:field="*{horario}"/>
             <br/>
             <br/>
-            <label for="contrasenia">Contraseña: </label>
-            <input type="password" name="contrasenia" th:field="*{contrasenia}"/>
+            <label for="evento">Evento: </label>
+            <input type="number" name="evento" th:field="*{evento}"/>
             <br/>
             <br/>
-            <label for="provincia">Provincia: </label>
-            <input type="text" name="provincia" th:field="*{provincia}"/>
+            <label for="cliente">Cliente: </label>
+            <input type="number" name="cliente" th:field="*{cliente}"/>
             <br/>
             <br/>
-            <label for="localidad">Localidad: </label>
-            <input type="text" name="localidad" th:field="*{localidad}"/>
-            <br/>
-            <br/>
-            <label for="domicilio">Domicilio: </label>
-            <input type="text" name="domicilio" th:field="*{domicilio}"/>
-            <br/>
-            <br/>
-            <label for="localizacion">Localizacion: </label>
-            <input type="text" name="localizacion" th:field="*{localizacion}"/>
+            <label for="pago">Pago: </label>
+            <input type="number" name="pago" th:field="*{pago}"/>
             <br/>
             <input type="submit" name="guardar" value="Guardar"/>
         </form>

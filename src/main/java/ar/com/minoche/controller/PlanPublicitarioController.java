@@ -17,7 +17,7 @@ public class PlanPublicitarioController {
     @GetMapping("/")
     public String index(Model model) {
         log.info("ejecutando el controlador Spring MVC");
-        model.addAttribute("PlanesPublicitarios", planPublicitarioService.listarPlanesPublicitarios());
+        model.addAttribute("planesPublicitarios", planPublicitarioService.listarPlanesPublicitarios());
         return "index";
     }
     
@@ -32,7 +32,7 @@ public class PlanPublicitarioController {
         return "redirect:/";
     }
     
-    @GetMapping("/editar/{idPlanPublicitario}")
+    @GetMapping("/editar/{id}")
     public String editar (PlanPublicitario planPublicitario, Model model){
         planPublicitario = planPublicitarioService.encontrarPlanPublicitario(planPublicitario);
         model.addAttribute("planPublicitario", planPublicitario);

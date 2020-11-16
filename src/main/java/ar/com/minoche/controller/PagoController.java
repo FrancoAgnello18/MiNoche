@@ -33,7 +33,7 @@ public class PagoController {
         return "redirect:/";
     }
     
-    @GetMapping("/editar/{idPago}")
+    @GetMapping("/editar/{id}")
     public String editar (Pago pago, Model model){
         pago = pagoService.encontrarPago(pago);
         model.addAttribute("pago", pago);

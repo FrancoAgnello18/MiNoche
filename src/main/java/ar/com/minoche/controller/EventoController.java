@@ -33,7 +33,7 @@ public class EventoController {
         return "redirect:/";
     }
     
-    @GetMapping("/editar/{idEvento}")
+    @GetMapping("/editar/{id}")
     public String editar (Evento evento, Model model){
         evento = eventoService.encontrarEvento(evento);
         model.addAttribute("evento", evento);

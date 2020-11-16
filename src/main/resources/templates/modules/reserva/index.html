@@ -7,42 +7,34 @@
     <body>
         <h1>Inicio</h1>
         <br/>
-        <a th:href="@{/agregar}">Crear Cliente</a>
-        <div th:if="${clientes != null and !clientes.empty}">
+        <a th:href="@{/agregar}">Crear Reserva</a>
+        <div th:if="${reservas != null and !reservas.empty}">
             <table border="1">
                 <tr>
-                     <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Celular</th>
-                    <th>Email</th>
-                    <th>Documento</th>
-                    <th>Contraseña</th>
-                    <th>Provincia</th>
-                    <th>Localidad</th>
-                    <th>Domicilio</th>
-                    <th>Localizacion</th>
-                    <th>Sexo</th>
+                    <th>Fecha</th>
+                    <th>Cantidad de Personas</th>
+                    <th>Codigo QR</th>
+                    <th>Horario</th>
+                    <th>Evento</th>
+                    <th>Cliente</th>
+                    <th>Pago</th>
                 </tr>
-                <tr th:each="clientes : ${clientes}">
-                    <td th:text="${cliente.nombre}">Mostrar nombre</td>
-                    <td th:text="${cliente.apellido}">Mostrar apellido</td>
-                    <td th:text="${cliente.celular}">Mostrar celular</td>
-                    <td th:text="${cliente.email}">Mostrar email</td>
-                    <td th:text="${cliente.documento}">Mostrar documento</td>
-                    <td th:text="${cliente.contrasenia}">Mostrar contraseña</td>
-                    <td th:text="${cliente.provincia}">Mostrar provincia</td>
-                    <td th:text="${cliente.localidad}">Mostrar localidad</td>
-                    <td th:text="${cliente.domicilio}">Mostrar domicilio</td>
-                    <td th:text="${cliente.localizacion}">Mostrar localizacion</td>
-                    <td th:text="${cliente.sexo}">Mostrar sexo</td>
-                    <td><a th:href="@{editar/} + ${cliente.id}" th:text="Editar"/></td>
-                    <td><a th:href="@{eliminar(id=${cliente.id})}" th:text="Eliminar"/></td>
+                <tr th:each="evento : ${eventos}">
+                    <td th:text="${evento.fecha}">Mostrar Fecha</td>
+                    <td th:text="${evento.cantPersonas}">Mostrar CantPersonas</td>
+                    <td th:text="${evento.codQr}">Mostrar CodQR</td>
+                    <td th:text="${evento.horario}">Mostrar Horario</td>
+                    <td th:text="${evento.evento}">Mostrar Evento</td>
+                    <td th:text="${evento.cliente}">Mostrar Cliente</td>
+                    <td th:text="${evento.pago}">Mostrar Pago</td>
                     
+                    <td><a th:href="@{editar/} + ${reserva.id}" th:text="Editar"/></td>
+                    <td><a th:href="@{eliminar(id=${reserva.id})}" th:text="Eliminar"/></td>
                 </tr>
             </table>
         </div>
-        <div th:if="${cuentas == null or cuentas.empty}">
-            La lista de cuentas está vacía
+        <div th:if="${reservas == null or reservas.empty}">
+            La lista de reservas está vacía
         </div>
 
     </body>

@@ -32,7 +32,7 @@ public class ReservaController {
         return "redirect:/";
     }
     
-    @GetMapping("/editar/{idReserva}")
+    @GetMapping("/editar/{id}")
     public String editar (Reserva reserva, Model model){
         reserva = reservaService.encontrarReserva(reserva);
         model.addAttribute("reserva", reserva);

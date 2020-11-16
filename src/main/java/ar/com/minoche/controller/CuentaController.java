@@ -35,7 +35,7 @@ public class CuentaController {
         return "redirect:/";
     }
     
-    @GetMapping("/editar/{idCuenta}")
+    @GetMapping("/editar/{id}")
     public String editar (Cuenta cuenta, Model model){
         cuenta = cuentaService.encontrarCuenta(cuenta);
         model.addAttribute("cuenta", cuenta);

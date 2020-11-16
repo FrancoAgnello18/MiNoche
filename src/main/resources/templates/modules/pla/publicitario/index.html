@@ -7,42 +7,31 @@
     <body>
         <h1>Inicio</h1>
         <br/>
-        <a th:href="@{/agregar}">Crear Cliente</a>
-        <div th:if="${clientes != null and !clientes.empty}">
+        <a th:href="@{/agregar}">Crear Plan Publicitario</a>
+        <div th:if="${planesPublicitarios != null and !planesPublicitarios.empty}">
             <table border="1">
                 <tr>
-                     <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Celular</th>
-                    <th>Email</th>
-                    <th>Documento</th>
-                    <th>Contraseña</th>
-                    <th>Provincia</th>
-                    <th>Localidad</th>
-                    <th>Domicilio</th>
-                    <th>Localizacion</th>
-                    <th>Sexo</th>
+                    <th>Precio</th>
+                    <th>Duracion (Dias)</th>
+                    <th>Alcance</th>
+                    <th>Administrador</th>
+                    <th>Publicidad (Lista)</th>
                 </tr>
-                <tr th:each="clientes : ${clientes}">
-                    <td th:text="${cliente.nombre}">Mostrar nombre</td>
-                    <td th:text="${cliente.apellido}">Mostrar apellido</td>
-                    <td th:text="${cliente.celular}">Mostrar celular</td>
-                    <td th:text="${cliente.email}">Mostrar email</td>
-                    <td th:text="${cliente.documento}">Mostrar documento</td>
-                    <td th:text="${cliente.contrasenia}">Mostrar contraseña</td>
-                    <td th:text="${cliente.provincia}">Mostrar provincia</td>
-                    <td th:text="${cliente.localidad}">Mostrar localidad</td>
-                    <td th:text="${cliente.domicilio}">Mostrar domicilio</td>
-                    <td th:text="${cliente.localizacion}">Mostrar localizacion</td>
-                    <td th:text="${cliente.sexo}">Mostrar sexo</td>
-                    <td><a th:href="@{editar/} + ${cliente.id}" th:text="Editar"/></td>
-                    <td><a th:href="@{eliminar(id=${cliente.id})}" th:text="Eliminar"/></td>
+                <tr th:each="planPublicitario : ${planesPublicitarios}">
+                    <td th:text="${planPublicitario.precio}">Mostrar Precio</td>
+                    <td th:text="${planPublicitario.duracionDias}">Mostrar DuracionDias (Dias)</td>
+                    <td th:text="${planPublicitario.alcance}">Mostrar Alcance</td>
+                    <td th:text="${planPublicitario.administrador}">Mostrar Administrador</td>
+                    <td th:text="${planPublicitario.publicidadList}">Mostrar Publicidad (Lista)</td>
+                    
+                    <td><a th:href="@{editar/} + ${planPublicitario.id}" th:text="Editar"/></td>
+                    <td><a th:href="@{eliminar(id=${planPublicitario.id})}" th:text="Eliminar"/></td>
                     
                 </tr>
             </table>
         </div>
-        <div th:if="${cuentas == null or cuentas.empty}">
-            La lista de cuentas está vacía
+        <div th:if="${planesPublicitarios == null or planesPublicitarios.empty}">
+            La lista de plan Publicitario está vacía
         </div>
 
     </body>

@@ -1,52 +1,24 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
-      <title>Datos del Cliente</title>
+      <title>Datos de la Publicidad</title>
         <meta charset="UTF-8">
     </head>
     <body>
-        <h1>Datos del Cliente</h1>
+        <h1>Datos de la Publicidad</h1>
         <a th:href="@{/}">Regresar</a>
         <br/>
-        <form th:action="@{/guardar}" method="post" th:object="${cliente}">
+        <form th:action="@{/guardar}" method="post" th:object="${publicidad}">
             <input type="hidden" name="id" th:field="*{id}"/>
             <br/>
-            <label for="nombre">Nombre: </label>
-            <input type="text" name="nombre" th:field="*{nombre}"/>
+            <label for="flyer">Flyer: </label>
+            <input type="number" name="flyer" th:field="*{flyer}"/>
             <br/>
-            <label for="apellido">Apellido: </label>
-            <input type="text" name="apellido" th:field="*{apellido}"/>
+            <label for="planPublicitario">Plan Publicitario: </label>
+            <input type="number" name="planPublicitario" th:field="*{planPublicitario}"/>
             <br/>
-            <label for="celular">Celular: </label>
-            <input type="tel" name="celular" th:field="*{celular}"/>
-            <br/>
-            <br/>
-            <label for="email">Email: </label>
-            <input type="email" name="email" th:field="*{email}"/>
-            <br/>
-            <br/>
-            <label for="documento">Documento: </label>
-            <input type="number" name="documento" th:field="*{documento}"/>
-            <br/>
-            <br/>
-            <label for="contrasenia">Contraseña: </label>
-            <input type="password" name="contrasenia" th:field="*{contrasenia}"/>
-            <br/>
-            <br/>
-            <label for="provincia">Provincia: </label>
-            <input type="text" name="provincia" th:field="*{provincia}"/>
-            <br/>
-            <br/>
-            <label for="localidad">Localidad: </label>
-            <input type="text" name="localidad" th:field="*{localidad}"/>
-            <br/>
-            <br/>
-            <label for="domicilio">Domicilio: </label>
-            <input type="text" name="domicilio" th:field="*{domicilio}"/>
-            <br/>
-            <br/>
-            <label for="localizacion">Localizacion: </label>
-            <input type="text" name="localizacion" th:field="*{localizacion}"/>
+            <label for="evento">Evento: </label>
+            <input type="number" name="evento" th:field="*{evento}"/>
             <br/>
             <input type="submit" name="guardar" value="Guardar"/>
         </form>

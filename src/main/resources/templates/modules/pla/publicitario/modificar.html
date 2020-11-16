@@ -1,52 +1,32 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
-      <title>Datos del Cliente</title>
+      <title>Datos del Plan Publicitario</title>
         <meta charset="UTF-8">
     </head>
     <body>
-        <h1>Datos del Cliente</h1>
+        <h1>Datos del Plan Publicitario</h1>
         <a th:href="@{/}">Regresar</a>
         <br/>
-        <form th:action="@{/guardar}" method="post" th:object="${cliente}">
+        <form th:action="@{/guardar}" method="post" th:object="${planPublicitario}">
             <input type="hidden" name="id" th:field="*{id}"/>
             <br/>
-            <label for="nombre">Nombre: </label>
-            <input type="text" name="nombre" th:field="*{nombre}"/>
+            <label for="precio">Precio: </label>
+            <input type="number" name="precio" th:field="*{precio}"/>
             <br/>
-            <label for="apellido">Apellido: </label>
-            <input type="text" name="apellido" th:field="*{apellido}"/>
+            <label for="duracionDias">Duracion (Dias): </label>
+            <input type="number" name="duracionDias" th:field="*{duracionDias}"/>
             <br/>
-            <label for="celular">Celular: </label>
-            <input type="tel" name="celular" th:field="*{celular}"/>
-            <br/>
-            <br/>
-            <label for="email">Email: </label>
-            <input type="email" name="email" th:field="*{email}"/>
+            <label for="alcance">Alcance: </label>
+            <input type="text" name="alcance" th:field="*{alcance}"/>
             <br/>
             <br/>
-            <label for="documento">Documento: </label>
-            <input type="number" name="documento" th:field="*{documento}"/>
+            <label for="administrador">Administrador: </label>
+            <input type="number" name="administrador" th:field="*{administrador}"/>
             <br/>
             <br/>
-            <label for="contrasenia">Contraseña: </label>
-            <input type="password" name="contrasenia" th:field="*{contrasenia}"/>
-            <br/>
-            <br/>
-            <label for="provincia">Provincia: </label>
-            <input type="text" name="provincia" th:field="*{provincia}"/>
-            <br/>
-            <br/>
-            <label for="localidad">Localidad: </label>
-            <input type="text" name="localidad" th:field="*{localidad}"/>
-            <br/>
-            <br/>
-            <label for="domicilio">Domicilio: </label>
-            <input type="text" name="domicilio" th:field="*{domicilio}"/>
-            <br/>
-            <br/>
-            <label for="localizacion">Localizacion: </label>
-            <input type="text" name="localizacion" th:field="*{localizacion}"/>
+            <label for="publicidadList">Publicidad (Lista): </label>
+            <input type="number" name="publicidadList" th:field="*{publicidadList}"/>
             <br/>
             <input type="submit" name="guardar" value="Guardar"/>
         </form>
