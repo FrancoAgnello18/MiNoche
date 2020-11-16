@@ -34,4 +34,7 @@ public class Administrador implements Serializable {
     @OneToMany(mappedBy = "administrador")
     List<PlanPublicitario> planPublicitarioList;
     
+    @OneToOne
+    @JoinColumn(name = "id_persona")
+    Persona persona;
 }
