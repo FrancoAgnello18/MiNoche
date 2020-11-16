@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Datos del Administrador</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Datos del Administrador</h1>
+        <a th:href="@{/}">Regresar</a>
+        <br/>
+        <form th:action="@{/guardar}" method="post" th:object="${administrador}">
+            <input type="hidden" name="id" th:field="*{id}"/>
+            <br/>
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre" th:field="*{nombre}"/>
+            <br/>
+            <label for="apellido">Apellido: </label>
+            <input type="text" name="apellido" th:field="*{apellido}"/>
+            <br/>
+            <label for="celular">Celular: </label>
+            <input type="tel" name="celular" th:field="*{celular}"/>
+            <br/>
+            <br/>
+            <label for="email">Email: </label>
+            <input type="email" name="email" th:field="*{email}"/>
+            <br/>
+            <br/>
+            <label for="documento">Documento: </label>
+            <input type="number" name="documento" th:field="*{documento}"/>
+            <br/>
+            <br/>
+            <label for="contrasenia">Contraseña: </label>
+            <input type="password" name="contrasenia" th:field="*{contrasenia}"/>
+            <br/>
+            <br/>
+            <label for="saldo">Saldo: </label>
+            <input type="number" name="saldo" th:field="*{saldo}"/>
+            <br/>
+            <input type="submit" name="guardar" value="Guardar"/>
+        </form>
+    </body>
+</html>

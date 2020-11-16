@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Inicio</h1>
+        <br/>
+        <a th:href="@{/agregar}">Crear Creador de Eventos</a>
+        <div th:if="${creadoresDeEventos != null and !creadoresDeEventos.empty}">
+            <table border="1">
+                <tr>
+                     <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Celular</th>
+                    <th>Email</th>
+                    <th>Documento</th>
+                    <th>Contraseña</th>
+                    <th>Provincia</th>
+                    <th>Localidad</th>
+                    <th>Domicilio</th>
+                    <th>Saldo</th>
+                </tr>
+                <tr th:each="creadoresDeEventos : ${creadoresDeEventos}">
+                    <td th:text="${creador_de_evento.nombre}">Mostrar nombre</td>
+                    <td th:text="${creador_de_evento.apellido}">Mostrar apellido</td>
+                    <td th:text="${creador_de_evento.celular}">Mostrar celular</td>
+                    <td th:text="${creador_de_evento.email}">Mostrar email</td>
+                    <td th:text="${creador_de_evento.documento}">Mostrar documento</td>
+                    <td th:text="${creador_de_evento.contrasenia}">Mostrar contraseña</td>
+                    <td th:text="${creador_de_evento.provincia}">Mostrar provincia</td>
+                    <td th:text="${creador_de_evento.localidad}">Mostrar localidad</td>
+                    <td th:text="${creador_de_evento.domicilio}">Mostrar domicilio</td>
+                    <td th:text="${creador_de_evento.saldo}">Mostrar saldo</td>
+                    <td><a th:href="@{editar/} + ${creador_de_evento.id}" th:text="Editar"/></td>
+                    <td><a th:href="@{eliminar(id=${creador_de_evento.id})}" th:text="Eliminar"/></td>
+                    
+                </tr>
+            </table>
+        </div>
+        <div th:if="${creadoresDeEventos == null or creadoresDeEventos.empty}">
+            La lista de creadores de eventos está vacía
+        </div>
+
+    </body>
+</html>

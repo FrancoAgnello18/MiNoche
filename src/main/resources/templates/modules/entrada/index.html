@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Inicio</h1>
+        <br/>
+        <a th:href="@{/agregar}">Crear Entrada</a>
+        <div th:if="${entradas != null and !entradas.empty}">
+            <table border="1">
+                <tr>
+                     <th>Codigo QR</th>
+                    <th>Precio</th>
+                    <th>Cliente</th>
+                    <th>Evento</th>
+                    <th>Pago</th>
+                </tr>
+                <tr th:each="entradas : ${entradas}">
+                    <td th:text="${entrada.codigoQr}">Mostrar codigo QR</td>
+                    <td th:text="${entrada.precio}">Mostrar precio</td>
+                    <td th:text="${entrada.idCliente}">Mostrar cliente</td>
+                    <td th:text="${entrada.idEvento}">Mostrar evento</td>
+                    <td th:text="${entrada.idPago}">Mostrar pago</td>
+                    <td><a th:href="@{editar/} + ${entrada.id}" th:text="Editar"/></td>
+                    <td><a th:href="@{eliminar(id=${entrada.id})}" th:text="Eliminar"/></td>
+                    
+                </tr>
+            </table>
+        </div>
+        <div th:if="${cuentas == null or cuentas.empty}">
+            La lista de cuentas está vacía
+        </div>
+
+    </body>
+</html>
