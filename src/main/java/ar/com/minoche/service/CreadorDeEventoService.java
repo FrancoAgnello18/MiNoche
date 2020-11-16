@@ -5,9 +5,9 @@ import ar.com.minoche.domain.CreadorDeEvento;
 import java.util.List;
 
 public interface CreadorDeEventoService {
-    List<CreadorDeEvento> listarCreador();
+    List<CreadorDeEvento> listarCreadoresDeEventos();
     
-    public void guardar (CreadorDeEvento creador);
-    public void eliminar (CreadorDeEvento creador);
-    public CreadorDeEvento encontrarCliente(CreadorDeEvento creador);
+    public void guardar (CreadorDeEvento creadorDeEvento);
+    public void eliminar (CreadorDeEvento creadorDeEvento);
+    public CreadorDeEvento encontrarCreadorDeEvento(CreadorDeEvento creadorDeEvento);
 }

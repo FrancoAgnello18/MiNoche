@@ -35,7 +35,7 @@ public class PagoServiceImpl implements PagoService{
 
     @Override
     @Transactional
-    public Pago encontrarEvento(Pago pago) {
+    public Pago encontrarPago(Pago pago) {
         return pagoDAO.findById(pago.getId()).orElse(null);
     }
     

@@ -13,7 +13,7 @@ public interface CuentaService {
 //    Cuenta updateCuenta(Cuenta cuenta);
 //    // delete
 //    Cuenta eliminarCuenta(Cuenta cuenta);
-    List<Cuenta> listarCuenta();
+    List<Cuenta> listarCuentas();
     
     public void guardar (Cuenta cuenta);
     public void eliminar (Cuenta cuenta);

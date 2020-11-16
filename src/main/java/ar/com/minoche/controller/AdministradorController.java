@@ -1,0 +1,49 @@
+package ar.com.minoche.controller;
+
+import ar.com.minoche.domain.Administrador;
+import ar.com.minoche.service.AdministradorService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+@Slf4j
+public class AdministradorController {
+    
+    @Autowired
+    private AdministradorService administradorService;
+    
+    @GetMapping("/")
+    public String index(Model model) {
+        log.info("ejecutando el controlador Spring MVC");
+        model.addAttribute("administradores", administradorService.listarAdministradores());
+        return "index";
+    }
+    
+    @GetMapping("/agregar")
+    public String agregar(Administrador administrador){
+        return "modificar";
+    }
+    
+    @PostMapping("/guardar")
+    public String guardar(Administrador administrador){
+        administradorService.guardar(administrador);
+        return "redirect:/";
+    }
+    
+    @GetMapping("/editar/{idAdministrador}")
+    public String editar (Administrador administrador, Model model){
+        administrador = administradorService.encontrarAdministrador(administrador);
+        model.addAttribute("administrador", administrador);
+        return "modificar";
+    }
+    
+    @GetMapping("/eliminar")
+    public String eliminar(Administrador administrador){
+        administradorService.eliminar(administrador);
+        return "redirect:/";
+    }
+}

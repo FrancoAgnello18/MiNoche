@@ -34,7 +34,7 @@ public class LugarServiceImpl implements LugarService{
 
     @Override
     @Transactional
-    public Lugar encontrarCuenta(Lugar lugar) {
+    public Lugar encontrarLugar(Lugar lugar) {
         return lugarDAO.findById(lugar.getId()).orElse(null);
     }
     
