@@ -24,26 +24,27 @@
                     <th>Creador de Evento</th>
                     <th>Lugar</th>
                 </tr>
-                <tr th:each="clientes : ${clientes}">
-                    <td th:text="${cliente.nombre}">Mostrar nombre</td>
-                    <td th:text="${cliente.apellido}">Mostrar apellido</td>
-                    <td th:text="${cliente.celular}">Mostrar celular</td>
-                    <td th:text="${cliente.email}">Mostrar email</td>
-                    <td th:text="${cliente.documento}">Mostrar documento</td>
-                    <td th:text="${cliente.contrasenia}">Mostrar contraseña</td>
-                    <td th:text="${cliente.provincia}">Mostrar provincia</td>
-                    <td th:text="${cliente.localidad}">Mostrar localidad</td>
-                    <td th:text="${cliente.domicilio}">Mostrar domicilio</td>
-                    <td th:text="${cliente.localizacion}">Mostrar localizacion</td>
-                    <td th:text="${cliente.sexo}">Mostrar sexo</td>
-                    <td><a th:href="@{editar/} + ${cliente.id}" th:text="Editar"/></td>
-                    <td><a th:href="@{eliminar(id=${cliente.id})}" th:text="Eliminar"/></td>
+                <tr th:each="eventos : ${eventos}">
+                    <td th:text="${evento.nombre}">Mostrar nombre</td>
+                    <td th:text="${evento.tipo}">Mostrar tipo</td>
+                    <td th:text="${evento.categoría}">Mostrar categoria</td>
+                    <td th:text="${evento.fecha}">Mostrar fecha</td>
+                    <td th:text="${evento.hora}">Mostrar hora</td>
+                    <td th:text="${evento.descripcion}">Mostrar descripcion</td>
+                    <td th:text="${evento.cantEntradas}">Mostrar cantidad de entradas</td>
+                    <td th:text="${evento.cantReservas}">Mostrar cantidad de reservas</td>
+                    <td th:text="${evento.limite}">Mostrar limite</td>
+                    <td th:text="${evento.telefono}">Mostrar telefono</td>
+                    <td th:text="${evento.creadorDeEvento}">Mostrar creador de evento</td>
+                    <td th:text="${evento.lugar}">Mostrar lugar</td>
+                    <td><a th:href="@{editar/} + ${evento.id}" th:text="Editar"/></td>
+                    <td><a th:href="@{eliminar(id=${evento.id})}" th:text="Eliminar"/></td>
                     
                 </tr>
             </table>
         </div>
-        <div th:if="${cuentas == null or cuentas.empty}">
-            La lista de cuentas está vacía
+        <div th:if="${eventos == null or eventos.empty}">
+            La lista de eventos está vacía
         </div>
 
     </body>

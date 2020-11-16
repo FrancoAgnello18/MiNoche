@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
-      <title>Datos del Cliente</title>
+      <title>Datos del Lugar</title>
         <meta charset="UTF-8">
     </head>
     <body>
-        <h1>Datos del Cliente</h1>
+        <h1>Datos del Lugar</h1>
         <a th:href="@{/}">Regresar</a>
         <br/>
-        <form th:action="@{/guardar}" method="post" th:object="${cliente}">
+        <form th:action="@{/guardar}" method="post" th:object="${lugar}">
             <input type="hidden" name="id" th:field="*{id}"/>
             <br/>
             <label for="nombre">Nombre: </label>
             <input type="text" name="nombre" th:field="*{nombre}"/>
             <br/>
-            <label for="apellido">Apellido: </label>
-            <input type="text" name="apellido" th:field="*{apellido}"/>
-            <br/>
-            <label for="celular">Celular: </label>
-            <input type="tel" name="celular" th:field="*{celular}"/>
+            <label for="telefono">Telefono: </label>
+            <input type="number" name="telefono" th:field="*{telefono}"/>
             <br/>
             <br/>
             <label for="email">Email: </label>
             <input type="email" name="email" th:field="*{email}"/>
             <br/>
             <br/>
-            <label for="documento">Documento: </label>
-            <input type="number" name="documento" th:field="*{documento}"/>
-            <br/>
-            <br/>
-            <label for="contrasenia">Contraseña: </label>
-            <input type="password" name="contrasenia" th:field="*{contrasenia}"/>
+            <label for="tipo">Tipo: </label>
+            <input type="text" name="tipo" th:field="*{tipo}"/>
             <br/>
             <br/>
             <label for="provincia">Provincia: </label>

@@ -20,9 +20,9 @@
                 <tr th:each="entradas : ${entradas}">
                     <td th:text="${entrada.codigoQr}">Mostrar codigo QR</td>
                     <td th:text="${entrada.precio}">Mostrar precio</td>
-                    <td th:text="${entrada.idCliente}">Mostrar cliente</td>
-                    <td th:text="${entrada.idEvento}">Mostrar evento</td>
-                    <td th:text="${entrada.idPago}">Mostrar pago</td>
+                    <td th:text="${entrada.cliente}">Mostrar cliente</td>
+                    <td th:text="${entrada.evento}">Mostrar evento</td>
+                    <td th:text="${entrada.pago}">Mostrar pago</td>
                     <td><a th:href="@{editar/} + ${entrada.id}" th:text="Editar"/></td>
                     <td><a th:href="@{eliminar(id=${entrada.id})}" th:text="Eliminar"/></td>
                     

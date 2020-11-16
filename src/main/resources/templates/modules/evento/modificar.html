@@ -1,52 +1,60 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
-      <title>Datos del Cliente</title>
+      <title>Datos del Evento</title>
         <meta charset="UTF-8">
     </head>
     <body>
-        <h1>Datos del Cliente</h1>
+        <h1>Datos del Evento</h1>
         <a th:href="@{/}">Regresar</a>
         <br/>
-        <form th:action="@{/guardar}" method="post" th:object="${cliente}">
+        <form th:action="@{/guardar}" method="post" th:object="${evento}">
             <input type="hidden" name="id" th:field="*{id}"/>
             <br/>
-            <label for="nombre">Nombre: </label>
-            <input type="text" name="nombre" th:field="*{nombre}"/>
+            <label for="nombreEvento">Nombre: </label>
+            <input type="text" name="nombreEvento" th:field="*{nombreEvento}"/>
             <br/>
-            <label for="apellido">Apellido: </label>
-            <input type="text" name="apellido" th:field="*{apellido}"/>
+            <label for="tipo">Tipo: </label>
+            <input type="text" name="tipo" th:field="*{tipo}"/>
             <br/>
-            <label for="celular">Celular: </label>
-            <input type="tel" name="celular" th:field="*{celular}"/>
-            <br/>
-            <br/>
-            <label for="email">Email: </label>
-            <input type="email" name="email" th:field="*{email}"/>
+            <label for="categoria">Categoria: </label>
+            <input type="text" name="categoria" th:field="*{categoria}"/>
             <br/>
             <br/>
-            <label for="documento">Documento: </label>
-            <input type="number" name="documento" th:field="*{documento}"/>
+            <label for="fecha">Fecha: </label>
+            <input type="text" name="fecha" th:field="*{fecha}"/>
             <br/>
             <br/>
-            <label for="contrasenia">Contraseña: </label>
-            <input type="password" name="contrasenia" th:field="*{contrasenia}"/>
+            <label for="hora">Hora: </label>
+            <input type="text" name="hora" th:field="*{hora}"/>
             <br/>
             <br/>
-            <label for="provincia">Provincia: </label>
-            <input type="text" name="provincia" th:field="*{provincia}"/>
+            <label for="descripcion">Descripcion: </label>
+            <input type="text" name="descripcion" th:field="*{descripcion}"/>
             <br/>
             <br/>
-            <label for="localidad">Localidad: </label>
-            <input type="text" name="localidad" th:field="*{localidad}"/>
+            <label for="cantEntradas">Cantidad de Entradas: </label>
+            <input type="number" name="cantEntradas" th:field="*{cantEntradas}"/>
             <br/>
             <br/>
-            <label for="domicilio">Domicilio: </label>
-            <input type="text" name="domicilio" th:field="*{domicilio}"/>
+            <label for="cantReservas">Cantidad de Reservas: </label>
+            <input type="number" name="cantreservas" th:field="*{cantReservas}"/>
             <br/>
             <br/>
-            <label for="localizacion">Localizacion: </label>
-            <input type="text" name="localizacion" th:field="*{localizacion}"/>
+            <label for="limite">Limite: </label>
+            <input type="number" name="limite" th:field="*{limite}"/>
+            <br/>
+            <br/>
+            <label for="telefono">Telefono: </label>
+            <input type="number" name="telefono" th:field="*{telefono}"/>
+            <br/>
+            <br/>
+            <label for="creadorDeEvento">Creador de Evento: </label>
+            <input type="number" name="creadorDeEvento" th:field="*{creadorDeEvento}"/>
+            <br/>
+            <br/>
+            <label for="lugar">Lugar: </label>
+            <input type="number" name="lugar" th:field="*{lugar}"/>
             <br/>
             <input type="submit" name="guardar" value="Guardar"/>
         </form>

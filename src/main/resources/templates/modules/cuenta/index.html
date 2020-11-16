@@ -14,13 +14,15 @@
                     <th>Alias</th>
                     <th>CBU</th>
                     <th>Banco</th>
+                    <th>Creador de evento</th>
                 </tr>
                 <tr th:each="cuenta : ${cuentas}">
                     <td th:text="${cuenta.alias}">Mostrar alias</td>
                     <td th:text="${cuenta.cbu}">Mostrar cbu</td>
                     <td th:text="${cuenta.banco}">Mostrar banco</td>
-                    <td><a th:href="@{editar/} + ${cuenta.idCuenta}" th:text="Editar"/></td>
-                    <td><a th:href="@{eliminar(idCuenta=${cuenta.idCuenta})}" th:text="Eliminar"/></td>
+                    <td th:text="${cuenta.creadorDeEvento}">Mostrar creador de evento</td>
+                    <td><a th:href="@{editar/} + ${cuenta.id}" th:text="Editar"/></td>
+                    <td><a th:href="@{eliminar(id=${cuenta.id})}" th:text="Eliminar"/></td>
                     
                 </tr>
             </table>
