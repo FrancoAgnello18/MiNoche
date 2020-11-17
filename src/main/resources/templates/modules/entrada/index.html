@@ -17,7 +17,7 @@
                     <th>Evento</th>
                     <th>Pago</th>
                 </tr>
-                <tr th:each="entradas : ${entradas}">
+                <tr th:each="entrada : ${entradas}">
                     <td th:text="${entrada.codigoQr}">Mostrar codigo QR</td>
                     <td th:text="${entrada.precio}">Mostrar precio</td>
                     <td th:text="${entrada.cliente}">Mostrar cliente</td>
@@ -29,8 +29,8 @@
                 </tr>
             </table>
         </div>
-        <div th:if="${cuentas == null or cuentas.empty}">
-            La lista de cuentas está vacía
+        <div th:if="${entradas == null or entradas.empty}">
+            La lista de entradas está vacía
         </div>
 
     </body>

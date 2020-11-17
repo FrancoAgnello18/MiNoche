@@ -8,7 +8,7 @@
         <h1>Inicio</h1>
         <br/>
         <a th:href="@{/agregar}">Crear Cliente</a>
-        <div th:if="${clientes != null and !clientes.empty}">
+        <div th:if="${lugares != null and !lugares.empty}">
             <table border="1">
                 <tr>
                      <th>Nombre</th>
@@ -20,7 +20,7 @@
                     <th>Domicilio</th>
                     <th>Localizacion</th>
                 </tr>
-                <tr th:each="lugares : ${lugares}">
+                <tr th:each="lugar : ${lugares}">
                     <td th:text="${lugar.nombre}">Mostrar nombre</td>
                     <td th:text="${lugar.telefono}">Mostrar telefono</td>
                     <td th:text="${lugar.email}">Mostrar email</td>

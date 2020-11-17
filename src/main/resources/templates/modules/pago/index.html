@@ -13,13 +13,13 @@
                 <tr>
                     <th>Medio de Pago</th>
                     <th>Nombre y Apellido</th>
-                     <th>CBU</th>
+                    <th>CBU</th>
                     <th>Numero de Tarjeta</th>
                     <th>Codigo de Seguridad</th>
                     <th>Codigo de Pago</th>
                     <th>Fecha de Vencimiento</th>
                 </tr>
-                <tr th:each="pagos : ${pagos}">
+                <tr th:each="pago : ${pagos}">
                     <td th:text="${pago.medioDePago}">Mostrar medio de pago</td>
                     <td th:text="${pago.nombreApellido}">Mostrar nombre completo</td>
                     <td th:text="${pago.cbu}">Mostrar CBU</td>

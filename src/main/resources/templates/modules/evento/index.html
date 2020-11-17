@@ -8,10 +8,10 @@
         <h1>Inicio</h1>
         <br/>
         <a th:href="@{/agregar}">Crear Evento</a>
-        <div th:if="${clientes != null and !clientes.empty}">
+        <div th:if="${eventos != null and !eventos.empty}">
             <table border="1">
                 <tr>
-                     <th>Nombre</th>
+                    <th>Nombre</th>
                     <th>Tipo</th>
                     <th>Categoría</th>
                     <th>Fecha</th>
@@ -24,7 +24,7 @@
                     <th>Creador de Evento</th>
                     <th>Lugar</th>
                 </tr>
-                <tr th:each="eventos : ${eventos}">
+                <tr th:each="evento : ${eventos}">
                     <td th:text="${evento.nombre}">Mostrar nombre</td>
                     <td th:text="${evento.tipo}">Mostrar tipo</td>
                     <td th:text="${evento.categoría}">Mostrar categoria</td>

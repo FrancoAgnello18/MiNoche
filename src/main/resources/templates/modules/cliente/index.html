@@ -23,7 +23,7 @@
                     <th>Localizacion</th>
                     <th>Sexo</th>
                 </tr>
-                <tr th:each="clientes : ${clientes}">
+                <tr th:each="cliente : ${clientes}">
                     <td th:text="${cliente.nombre}">Mostrar nombre</td>
                     <td th:text="${cliente.apellido}">Mostrar apellido</td>
                     <td th:text="${cliente.celular}">Mostrar celular</td>
@@ -41,8 +41,8 @@
                 </tr>
             </table>
         </div>
-        <div th:if="${cuentas == null or cuentas.empty}">
-            La lista de cuentas está vacía
+        <div th:if="${clientes == null or clientes.empty}">
+            La lista de clientes está vacía
         </div>
 
     </body>
