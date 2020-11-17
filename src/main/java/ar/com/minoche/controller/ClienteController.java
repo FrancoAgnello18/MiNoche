@@ -21,25 +21,25 @@ public class ClienteController {
     public String index(Model model) {
         log.info("ejecutando el controlador Spring MVC");
         model.addAttribute("clientes", clienteService.listarClientes());
-        return "index";
+        return "modules/cliente/index";
     }
     
     @GetMapping("/agregar")
     public String agregar(Cliente cliente){
-        return "modificar";
+        return "modules/cliente/modificar";
     }
     
     @PostMapping("/guardar")
     public String guardar(Cliente cliente){
         clienteService.guardar(cliente);
-        return "redirect:/";
+        return "redirect:/cliente/";
     }
     
     @GetMapping("/editar/{id}")
     public String editar (Cliente cliente, Model model){
         cliente = clienteService.encontrarCliente(cliente);
         model.addAttribute("cliente", cliente);
-        return "modificar";
+        return "modules/cliente/modificar";
     }
     
     @GetMapping("/eliminar")

@@ -21,8 +21,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "creadorDeEvento")
-
 public class CreadorDeEvento implements Serializable {
 
     @Id
@@ -41,7 +39,7 @@ public class CreadorDeEvento implements Serializable {
     @Column
     private double saldo;
     
-    @OneToMany(mappedBy = "creadorDeEvento")
+    @OneToMany
     List<Publicidad> eventoList;
 
     @OneToOne

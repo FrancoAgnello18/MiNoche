@@ -2,6 +2,7 @@ package ar.com.minoche.domain;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,7 +27,7 @@ public class Cliente implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
     
     @Column
     private String sexo;
@@ -49,7 +50,7 @@ public class Cliente implements Serializable {
     @OneToMany(mappedBy = "cliente")
     List<Reserva> reservasList;
     
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_persona")
     Persona persona;
 }

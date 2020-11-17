@@ -30,7 +30,7 @@ public class Publicidad implements Serializable {
     private int flyer;
 
     @ManyToOne
-    @JoinColumn(name = "id_planPublicitario")
+    @JoinColumn(name = "id_plan_publicitario")
     PlanPublicitario planPublicitario;
     
     @ManyToOne

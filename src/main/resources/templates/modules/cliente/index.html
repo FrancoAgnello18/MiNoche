@@ -7,7 +7,7 @@
     <body>
         <h1>Inicio</h1>
         <br/>
-        <a th:href="@{/agregar}">Crear Cliente</a>
+        <a th:href="@{/cliente/agregar}">Crear Cliente</a>
         <div th:if="${clientes != null and !clientes.empty}">
             <table border="1">
                 <tr>
@@ -22,21 +22,23 @@
                     <th>Domicilio</th>
                     <th>Localizacion</th>
                     <th>Sexo</th>
+                    <th></th>
+                    <th></th>
                 </tr>
                 <tr th:each="cliente : ${clientes}">
-                    <td th:text="${cliente.nombre}">Mostrar nombre</td>
-                    <td th:text="${cliente.apellido}">Mostrar apellido</td>
-                    <td th:text="${cliente.celular}">Mostrar celular</td>
-                    <td th:text="${cliente.email}">Mostrar email</td>
-                    <td th:text="${cliente.documento}">Mostrar documento</td>
-                    <td th:text="${cliente.contrasenia}">Mostrar contraseña</td>
+                    <td th:text="${cliente.persona.nombre}">Mostrar nombre</td>
+                    <td th:text="${cliente.persona.apellido}">Mostrar apellido</td>
+                    <td th:text="${cliente.persona.celular}">Mostrar celular</td>
+                    <td th:text="${cliente.persona.email}">Mostrar email</td>
+                    <td th:text="${cliente.persona.documento}">Mostrar documento</td>
+                    <td th:text="${cliente.persona.contrasenia}">Mostrar contraseña</td>
                     <td th:text="${cliente.provincia}">Mostrar provincia</td>
                     <td th:text="${cliente.localidad}">Mostrar localidad</td>
                     <td th:text="${cliente.domicilio}">Mostrar domicilio</td>
                     <td th:text="${cliente.localizacion}">Mostrar localizacion</td>
                     <td th:text="${cliente.sexo}">Mostrar sexo</td>
-                    <td><a th:href="@{editar/} + ${cliente.id}" th:text="Editar"/></td>
-                    <td><a th:href="@{eliminar(id=${cliente.id})}" th:text="Eliminar"/></td>
+                    <td><a th:href="@{/editar/} + ${cliente.id}" th:text="Editar"/></td>
+                    <td><a th:href="@{/eliminar/(id=${cliente.id})}" th:text="Eliminar"/></td>
                     
                 </tr>
             </table>
