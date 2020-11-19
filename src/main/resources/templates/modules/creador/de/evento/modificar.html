@@ -6,7 +6,7 @@
     </head>
     <body>
         <h1>Datos del Creador De Evento</h1>
-        <a th:href="@{/}">Regresar</a>
+        <a th:href="@{/creadorDeEvento/}">Regresar</a>
         <br/>
         <form th:action="@{/guardar}" method="post" th:object="${creadoresDeEventos}">
             <input type="hidden" name="id" th:field="*{id}"/>

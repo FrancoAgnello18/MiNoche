@@ -7,7 +7,7 @@
     <body>
         <h1>Inicio</h1>
         <br/>
-        <a th:href="@{/agregar}">Crear Entrada</a>
+        <a th:href="@{/entrada/agregar}">Crear Entrada</a>
         <div th:if="${entradas != null and !entradas.empty}">
             <table border="1">
                 <tr>

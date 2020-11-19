@@ -21,30 +21,30 @@ public class CreadorDeEventoController {
     public String index(Model model) {
         log.info("ejecutando el controlador Spring MVC");
         model.addAttribute("creadoresDeEventos", creadorDeEventoService.listarCreadoresDeEventos());
-        return "index";
+        return "modules/creadorDeEvento/index";
     }
     
     @GetMapping("/agregar")
     public String agregar(CreadorDeEvento creadorDeEvento){
-        return "modificar";
+        return "modules/creadorDeEvento/modificar";
     }
     
     @PostMapping("/guardar")
     public String guardar(CreadorDeEvento creadorDeEvento){
         creadorDeEventoService.guardar(creadorDeEvento);
-        return "redirect:/";
+        return "redirect:/creadorDeEvento/";
     }
     
     @GetMapping("/editar/{id}")
     public String editar (CreadorDeEvento creadorDeEvento, Model model){
         creadorDeEvento = creadorDeEventoService.encontrarCreadorDeEvento(creadorDeEvento);//esta mal el metodo en CreadorDeEventoService
         model.addAttribute("creadorDeEvento", creadorDeEvento);
-        return "modificar";
+        return "modules/creadorDeEvento/modificar";
     }
     
     @GetMapping("/eliminar")
     public String eliminar(CreadorDeEvento creadorDeEvento){
         creadorDeEventoService.eliminar(creadorDeEvento);
-        return "redirect:/";
+        return "redirect:/creadorDeEvento/";
     }
 }

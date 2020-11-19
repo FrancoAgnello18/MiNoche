@@ -22,30 +22,30 @@ public class AdministradorController {
     public String index(Model model) {
         log.info("ejecutando el controlador Spring MVC");
         model.addAttribute("administradores", administradorService.listarAdministradores());
-        return "index";
+        return "modules/administrador/index";
     }
     
     @GetMapping("/agregar")
     public String agregar(Administrador administrador){
-        return "modificar";
+        return "modules/administrador/modificar";
     }
     
     @PostMapping("/guardar")
     public String guardar(Administrador administrador){
         administradorService.guardar(administrador);
-        return "redirect:/";
+        return "redirect:/administrador/";
     }
     
     @GetMapping("/editar/{id}")
     public String editar (Administrador administrador, Model model){
         administrador = administradorService.encontrarAdministrador(administrador);
-        model.addAttribute("administrador", administrador);
-        return "modificar";
+        model.addAttribute("cuenta", administrador);
+        return "modules/administrador/modificar";
     }
     
     @GetMapping("/eliminar")
     public String eliminar(Administrador administrador){
         administradorService.eliminar(administrador);
-        return "redirect:/";
+        return "redirect:/administrador/";
     }
 }

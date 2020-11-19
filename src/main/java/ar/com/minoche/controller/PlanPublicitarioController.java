@@ -20,30 +20,30 @@ public class PlanPublicitarioController {
     public String index(Model model) {
         log.info("ejecutando el controlador Spring MVC");
         model.addAttribute("planesPublicitarios", planPublicitarioService.listarPlanesPublicitarios());
-        return "index";
+        return "modules/planPublicitario/index";
     }
     
     @GetMapping("/agregar")
     public String agregar(PlanPublicitario planPublicitario){
-        return "modificar";
+        return "modules/planPublicitario/modificar";
     }
     
     @PostMapping("/guardar")
     public String guardar(PlanPublicitario planPublicitario){
         planPublicitarioService.guardar(planPublicitario);
-        return "redirect:/";
+        return "redirect:/planPublicitario/";
     }
     
     @GetMapping("/editar/{id}")
     public String editar (PlanPublicitario planPublicitario, Model model){
         planPublicitario = planPublicitarioService.encontrarPlanPublicitario(planPublicitario);
         model.addAttribute("planPublicitario", planPublicitario);
-        return "modificar";
+        return "modules/planPublicitario/modificar";
     }
     
     @GetMapping("/eliminar")
     public String eliminar(PlanPublicitario planPublicitario){
         planPublicitarioService.eliminar(planPublicitario);
-        return "redirect:/";
+        return "redirect:/planPublicitario/";
     }
 }

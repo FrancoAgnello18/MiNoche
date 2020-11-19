@@ -26,7 +26,7 @@ public class PersonaController {
     
     @GetMapping("/agregar")
     public String agregar(Persona persona){
-        return "modificar";
+        return "modules/persona/modificar";
     }
     
     @PostMapping("/guardar")

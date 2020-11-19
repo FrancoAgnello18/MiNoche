@@ -9,7 +9,7 @@
         <a th:href="@{/cliente/}">Regresar</a>
         <br/>
         <form th:action="@{/cliente/guardar}" method="post" th:object="${cliente}">
-            <input type="hidden" name="id" th:field="*{cliente.id}"/>
+            <input type="hidden" name="id" th:field="*{id}"/>
             <br/>
             <label for="nombre">Nombre: </label>
             <input type="text" name="nombre" th:field="*{persona.nombre}"/>
@@ -47,6 +47,10 @@
             <br/>
             <label for="localizacion">Localizacion: </label>
             <input type="text" name="localizacion" th:field="*{localizacion}"/>
+            <br/>
+            <br/>
+            <label for="sexo">Sexo: </label>
+            <input type="text" name="sexo" th:field="*{sexo}"/>
             <br/>
             <input type="submit" name="guardar" value="Guardar"/>
         </form>

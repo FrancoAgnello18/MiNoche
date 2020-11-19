@@ -7,7 +7,7 @@
     <body>
         <h1>Inicio</h1>
         <br/>
-        <a th:href="@{/agregar}">Crear Evento</a>
+        <a th:href="@{/evento/agregar}">Crear Evento</a>
         <div th:if="${eventos != null and !eventos.empty}">
             <table border="1">
                 <tr>

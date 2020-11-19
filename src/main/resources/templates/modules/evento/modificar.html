@@ -6,9 +6,9 @@
     </head>
     <body>
         <h1>Datos del Evento</h1>
-        <a th:href="@{/}">Regresar</a>
+        <a th:href="@{/evento/}">Regresar</a>
         <br/>
-        <form th:action="@{/guardar}" method="post" th:object="${evento}">
+        <form th:action="@{/evento/guardar}" method="post" th:object="${evento}">
             <input type="hidden" name="id" th:field="*{id}"/>
             <br/>
             <label for="nombreEvento">Nombre: </label>

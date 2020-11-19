@@ -6,9 +6,9 @@
     </head>
     <body>
         <h1>Datos del Pago</h1>
-        <a th:href="@{/}">Regresar</a>
+        <a th:href="@{/pago/}">Regresar</a>
         <br/>
-        <form th:action="@{/guardar}" method="post" th:object="${pago}">
+        <form th:action="@{/pago/guardar}" method="post" th:object="${pago}">
             <input type="hidden" name="id" th:field="*{id}"/>
             <br/>
             <label for="medioDePago">Medio de Pago: </label>

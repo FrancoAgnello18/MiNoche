@@ -21,18 +21,18 @@ public class EventoController {
     public String index(Model model) {
         log.info("ejecutando el controlador Spring MVC");
         model.addAttribute("eventos", eventoService.listarEventos());
-        return "index";
+        return "modules/evento/index";
     }
     
     @GetMapping("/agregar")
     public String agregar(Evento evento){
-        return "modificar";
+        return "modules/evento/modificar";
     }
     
     @PostMapping("/guardar")
     public String guardar(Evento evento){
         eventoService.guardar(evento);
-        return "redirect:/";
+        return "redirect:/evento/";
     }
     
     @GetMapping("/editar/{id}")

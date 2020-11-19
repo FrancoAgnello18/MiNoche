@@ -21,30 +21,30 @@ public class EntradaController {
     public String index(Model model) {
         log.info("ejecutando el controlador Spring MVC");
         model.addAttribute("entradas", entradaService.listarEntradas());
-        return "index";
+        return "modules/entrada/index";
     }
     
     @GetMapping("/agregar")
-    public String agregar(Entrada entrada){
-        return "modificar";
+    public String agregar(Entrada entrada) {
+        return "modules/entrada/modificar";
     }
     
     @PostMapping("/guardar")
     public String guardar(Entrada entrada){
         entradaService.guardar(entrada);
-        return "redirect:/";
+        return "redirect:/entrada/";
     }
     
     @GetMapping("/editar/{id}")
     public String editar (Entrada entrada, Model model){
         entrada = entradaService.encontrarEntrada(entrada);
         model.addAttribute("entrada", entrada);
-        return "modificar";
+        return "modules/entrada/modificar";
     }
     
     @GetMapping("/eliminar")
     public String eliminar(Entrada entrada){
         entradaService.eliminar(entrada);
-        return "redirect:/";
+        return "redirect:/entrada/";
     }
 }

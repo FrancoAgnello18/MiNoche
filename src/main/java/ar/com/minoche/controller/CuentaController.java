@@ -23,30 +23,30 @@ public class CuentaController {
         //List<Cuenta> cuentas = cuentaService.listarCuenta();
         log.info("ejecutando el controlador Spring MVC");
         model.addAttribute("cuentas", cuentaService.listarCuentas());
-        return "index"; //http://localhost:8080/cuentas/list
+        return "modules/cuenta/index"; //http://localhost:8080/cuentas/list
     }
     
     @GetMapping("/agregar")
     public String agregar(Cuenta cuenta){
-        return "modificar";
+        return "modules/cuenta/modificar";
     }
     
     @PostMapping("/guardar")
     public String guardar(Cuenta cuenta){
         cuentaService.guardar(cuenta);
-        return "redirect:/";
+        return "redirect:/cuenta/";
     }
     
     @GetMapping("/editar/{id}")
     public String editar (Cuenta cuenta, Model model){
         cuenta = cuentaService.encontrarCuenta(cuenta);
         model.addAttribute("cuenta", cuenta);
-        return "modificar";
+        return "modules/cuenta/modificar";
     }
     
     @GetMapping("/eliminar")
     public String eliminar(Cuenta cuenta){
         cuentaService.eliminar(cuenta);
-        return "redirect:/";
+        return "redirect:/cuenta/";
     }
 }

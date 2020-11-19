@@ -6,9 +6,9 @@
     </head>
     <body>
         <h1>Datos de la Reserva</h1>
-        <a th:href="@{/}">Regresar</a>
+        <a th:href="@{/reserva/}">Regresar</a>
         <br/>
-        <form th:action="@{/guardar}" method="post" th:object="${reserva}">
+        <form th:action="@{/reserva/guardar}" method="post" th:object="${reserva}">
             <input type="hidden" name="id" th:field="*{id}"/>
             <br/>
             <label for="fecha">Fecha: </label>

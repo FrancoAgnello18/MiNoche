@@ -21,30 +21,30 @@ public class PublicidadController {
     public String index(Model model) {
         log.info("ejecutando el controlador Spring MVC");
         model.addAttribute("publicidades", publicidadService.listarPublicidades());
-        return "index";
+        return "modules/publicidad/index";
     }
     
     @GetMapping("/agregar")
     public String agregar(Publicidad publicidad){
-        return "modificar";
+        return "modules/publicidad/modificar";
     }
     
     @PostMapping("/guardar")
     public String guardar(Publicidad publicidad){
         publicidadService.guardar(publicidad);
-        return "redirect:/";
+        return "redirect:/publicidad/";
     }
     
     @GetMapping("/editar/{id}")
     public String editar (Publicidad publicidad, Model model){
         publicidad = publicidadService.encontrarPublicidad(publicidad);
         model.addAttribute("publicidad", publicidad);
-        return "modificar";
+        return "modules/publicidad/modificar";
     }
     
     @GetMapping("/eliminar")
     public String eliminar(Publicidad publicidad){
         publicidadService.eliminar(publicidad);
-        return "redirect:/";
+        return "redirect:/publicidad/";
     }
 }

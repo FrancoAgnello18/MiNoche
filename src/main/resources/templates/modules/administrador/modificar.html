@@ -6,9 +6,9 @@
     </head>
     <body>
         <h1>Datos del Administrador</h1>
-        <a th:href="@{/}">Regresar</a>
+        <a th:href="@{/administrador/}">Regresar</a>
         <br/>
-        <form th:action="@{/guardar}" method="post" th:object="${administrador}">
+        <form th:action="@{administrador/guardar}" method="post" th:object="${administrador}">
             <input type="hidden" name="id" th:field="*{id}"/>
             <br/>
             <label for="nombre">Nombre: </label>

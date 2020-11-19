@@ -11,7 +11,7 @@
         <div th:if="${clientes != null and !clientes.empty}">
             <table border="1">
                 <tr>
-                     <th>Nombre</th>
+                    <th>Nombre</th>
                     <th>Apellido</th>
                     <th>Celular</th>
                     <th>Email</th>
@@ -37,10 +37,10 @@
                     <td th:text="${cliente.domicilio}">Mostrar domicilio</td>
                     <td th:text="${cliente.localizacion}">Mostrar localizacion</td>
                     <td th:text="${cliente.sexo}">Mostrar sexo</td>
-                    <td><a th:href="@{/editar/} + ${cliente.id}" th:text="Editar"/></td>
-                    <td><a th:href="@{/eliminar/(id=${cliente.id})}" th:text="Eliminar"/></td>
-                    
+                    <td><a th:href="@{editar/} + ${cliente.id}" th:text="Editar"/></td>
+                    <td><a th:href="@{eliminar(id=${cliente.id})}" th:text="Eliminar"/></td>
                 </tr>
+
             </table>
         </div>
         <div th:if="${clientes == null or clientes.empty}">

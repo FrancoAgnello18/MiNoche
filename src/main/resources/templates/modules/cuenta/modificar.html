@@ -6,9 +6,9 @@
     </head>
     <body>
         <h1>Datos de la Cuenta</h1>
-        <a th:href="@{/}">Regresar</a>
+        <a th:href="@{/cuenta/}">Regresar</a>
         <br/>
-        <form th:action="@{/guardar}" method="post" th:object="${cuenta}">
+        <form th:action="@{/cuenta/guardar}" method="post" th:object="${cuenta}">
             <input type="hidden" name="id" th:field="*{id}"/>
             <br/>
             <label for="alias">Alias: </label>

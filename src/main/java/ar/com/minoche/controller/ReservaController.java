@@ -20,31 +20,31 @@ public class ReservaController {
     public String index(Model model) {
         log.info("ejecutando el controlador Spring MVC");
         model.addAttribute("reservas", reservaService.listarReservas());
-        return "index";
+        return "modules/reserva/index";
     }
     
     @GetMapping("/agregar")
     public String agregar(Reserva reserva){
-        return "modificar";
+        return "modules/reserva/modificar";
     }
     
     @PostMapping("/guardar")
     public String guardar(Reserva reserva){
         reservaService.guardar(reserva);
-        return "redirect:/";
+        return "redirect:/reserva/";
     }
     
     @GetMapping("/editar/{id}")
     public String editar (Reserva reserva, Model model){
         reserva = reservaService.encontrarReserva(reserva);
         model.addAttribute("reserva", reserva);
-        return "modificar";
+        return "modules/reserva/modificar";
     }
     
     @GetMapping("/eliminar")
     public String eliminar(Reserva reserva){
         reservaService.eliminar(reserva);
-        return "redirect:/";
+        return "redirect:/reserva/";
     }
     
     

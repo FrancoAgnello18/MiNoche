@@ -6,7 +6,7 @@
     </head>
     <body>
         <h1>Datos de la Publicidad</h1>
-        <a th:href="@{/}">Regresar</a>
+        <a th:href="@{/publicidad/}">Regresar</a>
         <br/>
         <form th:action="@{/guardar}" method="post" th:object="${publicidad}">
             <input type="hidden" name="id" th:field="*{id}"/>

@@ -6,9 +6,9 @@
     </head>
     <body>
         <h1>Datos de la Entrada</h1>
-        <a th:href="@{/}">Regresar</a>
+        <a th:href="@{/entrada/}">Regresar</a>
         <br/>
-        <form th:action="@{/guardar}" method="post" th:object="${entrada}">
+        <form th:action="@{/entrada/guardar}" method="post" th:object="${entrada}">
             <input type="hidden" name="id" th:field="*{id}"/>
             <br/>
             <label for="codigoQr">Codigo QR: </label>

@@ -21,30 +21,30 @@ public class PagoController {
     public String index(Model model) {
         log.info("ejecutando el controlador Spring MVC");
         model.addAttribute("pagos", pagoService.listarPagos());
-        return "index";
+        return "modules/pago/index";
     }
     
     @GetMapping("/agregar")
     public String agregar(Pago pago){
-        return "modificar";
+        return "modules/pago/modificar";
     }
     
     @PostMapping("/guardar")
     public String guardar(Pago pago){
         pagoService.guardar(pago);
-        return "redirect:/";
+        return "redirect:/pago/";
     }
     
     @GetMapping("/editar/{id}")
     public String editar (Pago pago, Model model){
         pago = pagoService.encontrarPago(pago);
         model.addAttribute("pago", pago);
-        return "modificar";
+        return "modules/pago/modificar";
     }
     
     @GetMapping("/eliminar")
     public String eliminar(Pago pago){
         pagoService.eliminar(pago);
-        return "redirect:/";
+        return "redirect:/pago/";
     }
 }

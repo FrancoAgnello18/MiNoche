@@ -21,30 +21,30 @@ public class LugarController {
     public String index(Model model) {
         log.info("ejecutando el controlador Spring MVC");
         model.addAttribute("lugares", lugarService.listarLugares());
-        return "index";
+        return "modules/lugar/index";
     }
     
     @GetMapping("/agregar")
     public String agregar(Lugar lugar){
-        return "modificar";
+        return "modules/lugar/modificar";
     }
     
     @PostMapping("/guardar")
     public String guardar(Lugar lugar){
         lugarService.guardar(lugar);
-        return "redirect:/";
+        return "redirect:/lugar/";
     }
     
     @GetMapping("/editar/{id}")
     public String editar (Lugar lugar, Model model){
         lugar = lugarService.encontrarLugar(lugar);
         model.addAttribute("lugar", lugar);
-        return "modificar";
+        return "modules/lugar/modificar";
     }
     
     @GetMapping("/eliminar")
     public String eliminar(Lugar lugar){
         lugarService.eliminar(lugar);
-        return "redirect:/";
+        return "redirect:/lugar/";
     }
 }
