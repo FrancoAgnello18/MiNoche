@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Inicio</title>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8" />
     </head>
     <body>
         <h1>Inicio</h1>
@@ -37,8 +37,9 @@
                     <td th:text="${cliente.domicilio}">Mostrar domicilio</td>
                     <td th:text="${cliente.localizacion}">Mostrar localizacion</td>
                     <td th:text="${cliente.sexo}">Mostrar sexo</td>
-                    <td><a th:href="@{editar/} + ${cliente.id}" th:text="Editar"/></td>
-                    <td><a th:href="@{eliminar(id=${cliente.id})}" th:text="Eliminar"/></td>
+                    <td><a th:href="@{/cliente/editar/} + ${cliente.id}" th:text="Editar"/></td>
+                    <td><a th:href="@{/cliente/eliminar(id=${cliente.id})}" th:text="Eliminar"/></td>
+                    
                 </tr>
 
             </table>

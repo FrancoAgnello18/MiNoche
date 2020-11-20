@@ -1,4 +1,3 @@
-
 package ar.com.minoche.service.impl;
 
 import ar.com.minoche.dao.ClienteDAO;
@@ -34,7 +33,7 @@ public class ClienteServiceImpl implements ClienteService{
     }
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
     public Cliente encontrarCliente(Cliente cliente) {
         return clienteDAO.findById(cliente.getId()).orElse(null);
     }

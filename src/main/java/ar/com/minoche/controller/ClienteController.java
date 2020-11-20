@@ -14,37 +14,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 @RequestMapping("/cliente")
 public class ClienteController {
-
+    
     @Autowired
     private ClienteService clienteService;
-
+    
     @GetMapping("/")
     public String index(Model model) {
         log.info("ejecutando el controlador Spring MVC");
         model.addAttribute("clientes", clienteService.listarClientes());
         return "modules/cliente/index";
     }
-
+    
     @GetMapping("/agregar")
-    public String agregar(Cliente cliente) {
+    public String agregar(Cliente cliente){
         return "modules/cliente/modificar";
     }
-
+    
     @PostMapping("/guardar")
-    public String guardar(Cliente cliente) {
+    public String guardar(Cliente cliente){
         clienteService.guardar(cliente);
         return "redirect:/cliente/";
     }
-
-     @GetMapping("/editar/{id}")
+    
+    @GetMapping("/editar/{id}")
     public String editar (Cliente cliente, Model model){
         cliente = clienteService.encontrarCliente(cliente);
-        model.addAttribute("cuenta", cliente);
+        model.addAttribute("cliente", cliente);
         return "modules/cliente/modificar";
     }
-
+    
     @GetMapping("/eliminar")
-    public String eliminar(Cliente cliente) {
+    public String eliminar(Cliente cliente){
         clienteService.eliminar(cliente);
         return "redirect:/cliente/";
     }
