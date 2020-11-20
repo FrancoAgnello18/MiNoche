@@ -19,14 +19,14 @@
                     <th>Cliente</th>
                     <th>Pago</th>
                 </tr>
-                <tr th:each="evento : ${eventos}">
-                    <td th:text="${evento.fecha}">Mostrar Fecha</td>
-                    <td th:text="${evento.cantPersonas}">Mostrar CantPersonas</td>
-                    <td th:text="${evento.codQr}">Mostrar CodQR</td>
-                    <td th:text="${evento.horario}">Mostrar Horario</td>
-                    <td th:text="${evento.evento}">Mostrar Evento</td>
-                    <td th:text="${evento.cliente}">Mostrar Cliente</td>
-                    <td th:text="${evento.pago}">Mostrar Pago</td>
+                <tr th:each="reserva : ${reservas}">
+                    <td th:text="${reserva.fecha}">Mostrar Fecha</td>
+                    <td th:text="${reserva.cantPersonas}">Mostrar CantPersonas</td>
+                    <td th:text="${reserva.codQr}">Mostrar CodQR</td>
+                    <td th:text="${reserva.horario}">Mostrar Horario</td>
+                    <td th:text="${reserva.evento}">Mostrar Evento</td>
+                    <td th:text="${reserva.cliente}">Mostrar Cliente</td>
+                    <td th:text="${reserva.pago}">Mostrar Pago</td>
                     
                     <td><a th:href="@{editar/} + ${reserva.id}" th:text="Editar"/></td>
                     <td><a th:href="@{eliminar(id=${reserva.id})}" th:text="Eliminar"/></td>

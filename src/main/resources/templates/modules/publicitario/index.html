@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Inicio</h1>
+        <br/>
+        <a th:href="@{/publicitario/agregar}">Crear Plan Publicitario</a>
+        <div th:if="${publicitarios != null and !publicitarios.empty}">
+            <table border="1">
+                <tr>
+                    <th>Precio</th>
+                    <th>Duracion (Dias)</th>
+                    <th>Alcance</th>
+                    <th>Administrador</th>
+                    <th>Publicidad (Lista)</th>
+                </tr>
+                <tr th:each="publicitario : ${publicitarios}">
+                    <td th:text="${publicitario.precio}">Mostrar Precio</td>
+                    <td th:text="${publicitario.duracionDias}">Mostrar DuracionDias (Dias)</td>
+                    <td th:text="${publicitario.alcance}">Mostrar Alcance</td>
+                    <td th:text="${publicitario.administrador}">Mostrar Administrador</td>
+                    <td th:text="${publicitario.publicidadList}">Mostrar Publicidad (Lista)</td>
+                    
+                    <td><a th:href="@{editar/} + ${publicitario.id}" th:text="Editar"/></td>
+                    <td><a th:href="@{eliminar(id=${publicitario.id})}" th:text="Eliminar"/></td>
+                    
+                </tr>
+            </table>
+        </div>
+        <div th:if="${publicitarios == null or publicitarios.empty}">
+            La lista de plan Publicitario está vacía
+        </div>
+
+    </body>
+</html>

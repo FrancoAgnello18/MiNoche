@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @Slf4j
-@RequestMapping("/planPublicitario")
+@RequestMapping("/publicitario")
 public class PlanPublicitarioController {
     @Autowired
     private PlanPublicitarioService planPublicitarioService;
@@ -19,31 +19,31 @@ public class PlanPublicitarioController {
     @GetMapping("/")
     public String index(Model model) {
         log.info("ejecutando el controlador Spring MVC");
-        model.addAttribute("planesPublicitarios", planPublicitarioService.listarPlanesPublicitarios());
-        return "modules/planPublicitario/index";
+        model.addAttribute("publicitarios", planPublicitarioService.listarPlanesPublicitarios());
+        return "modules/publicitario/index";
     }
     
     @GetMapping("/agregar")
     public String agregar(PlanPublicitario planPublicitario){
-        return "modules/planPublicitario/modificar";
+        return "modules/publicitario/modificar";
     }
     
     @PostMapping("/guardar")
     public String guardar(PlanPublicitario planPublicitario){
         planPublicitarioService.guardar(planPublicitario);
-        return "redirect:/planPublicitario/";
+        return "redirect:/publicitario/";
     }
     
     @GetMapping("/editar/{id}")
     public String editar (PlanPublicitario planPublicitario, Model model){
         planPublicitario = planPublicitarioService.encontrarPlanPublicitario(planPublicitario);
         model.addAttribute("planPublicitario", planPublicitario);
-        return "modules/planPublicitario/modificar";
+        return "modules/publicitario/modificar";
     }
     
     @GetMapping("/eliminar")
     public String eliminar(PlanPublicitario planPublicitario){
         planPublicitarioService.eliminar(planPublicitario);
-        return "redirect:/planPublicitario/";
+        return "redirect:/publicitario/";
     }
 }

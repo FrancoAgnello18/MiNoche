@@ -6,9 +6,9 @@
     </head>
     <body>
         <h1>Datos del Plan Publicitario</h1>
-        <a th:href="@{/planPublicitario/}">Regresar</a>
+        <a th:href="@{/publicitario/}">Regresar</a>
         <br/>
-        <form th:action="@{/planPublicitario/guardar}" method="post" th:object="${planPublicitario}">
+        <form th:action="@{/publicitario/guardar}" method="post" th:object="${planPublicitario}">
             <input type="hidden" name="id" th:field="*{id}"/>
             <br/>
             <label for="precio">Precio: </label>

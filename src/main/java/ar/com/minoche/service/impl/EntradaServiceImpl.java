@@ -21,16 +21,19 @@ public class EntradaServiceImpl implements EntradaService{
     }
 
     @Override
+    @Transactional
     public void guardar(Entrada entrada) {
         entradaDAO.save(entrada);
     }
 
     @Override
+    @Transactional
     public void eliminar(Entrada entrada) {
         entradaDAO.delete(entrada);
     }
 
     @Override
+    @Transactional (readOnly = true)
     public Entrada encontrarEntrada(Entrada entrada) {
         return entradaDAO.findById(entrada.getId()).orElse(null);
     }

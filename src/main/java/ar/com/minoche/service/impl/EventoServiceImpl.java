@@ -21,16 +21,19 @@ public class EventoServiceImpl implements EventoService{
     }
 
     @Override
+    @Transactional
     public void guardar(Evento evento) {
         eventoDAO.save(evento);
     }
 
     @Override
+    @Transactional
     public void eliminar(Evento evento) {
         eventoDAO.delete(evento);
     }
 
     @Override
+    @Transactional
     public Evento encontrarEvento(Evento evento) {
         return eventoDAO.findById(evento.getId()).orElse(null);
     }

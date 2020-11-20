@@ -21,6 +21,7 @@ public class AdministradorServiceImpl implements AdministradorService{
     }
 
     @Override
+    @Transactional
     public void guardar(Administrador administrador) {
         administradorDAO.save(administrador);
     }
@@ -31,6 +32,7 @@ public class AdministradorServiceImpl implements AdministradorService{
     }
 
     @Override
+    @Transactional
     public Administrador encontrarAdministrador(Administrador administrador) {
         return administradorDAO.findById(administrador.getId()).orElse(null);
     }

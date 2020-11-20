@@ -31,6 +31,7 @@ public class CreadorDeEventoServiceImpl implements CreadorDeEventoService{
     }
 
     @Override
+    @Transactional
     public CreadorDeEvento encontrarCreadorDeEvento(CreadorDeEvento creadorDeEvento) {
         return creadorDeEventosDAO.findById(creadorDeEvento.getId()).orElse(null);
     }
