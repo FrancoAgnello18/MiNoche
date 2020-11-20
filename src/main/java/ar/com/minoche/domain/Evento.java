@@ -1,6 +1,8 @@
 package ar.com.minoche.domain;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,10 +35,10 @@ public class Evento implements Serializable {
     private String nombreEvento;
     
     @Column
-    private int fecha;
+    private Timestamp fecha;
     
-    @Column
-    private int hora;
+//    @Column
+//    private int hora;
     
     @Column
     private String telefonoEvento;
