@@ -16,7 +16,7 @@ public class CreadorDeEventoServiceImpl implements CreadorDeEventoService{
     
     @Override
     @Transactional(readOnly = true)
-    public List<CreadorDeEvento> listarCreadoresDeEventos() {
+    public List<CreadorDeEvento> listarCreadorDeEventos() {
         return (List<CreadorDeEvento>) creadorDeEventosDAO.findAll();
     }
 

@@ -23,18 +23,18 @@
                     <th>Saldo</th>
                 </tr>
                 <tr th:each="creador : ${creadores}">
-                    <td th:text="${creador.nombre}">Mostrar nombre</td>
-                    <td th:text="${creador.apellido}">Mostrar apellido</td>
-                    <td th:text="${creador.celular}">Mostrar celular</td>
-                    <td th:text="${creador.email}">Mostrar email</td>
-                    <td th:text="${creador.documento}">Mostrar documento</td>
-                    <td th:text="${creador.contrasenia}">Mostrar contraseña</td>
+                    <td th:text="${creador.persona.nombre}">Mostrar nombre</td>
+                    <td th:text="${creador.persona.apellido}">Mostrar apellido</td>
+                    <td th:text="${creador.persona.celular}">Mostrar celular</td>
+                    <td th:text="${creador.persona.email}">Mostrar email</td>
+                    <td th:text="${creador.persona.documento}">Mostrar documento</td>
+                    <td th:text="${creador.persona.contrasenia}">Mostrar contraseña</td>
                     <td th:text="${creador.provincia}">Mostrar provincia</td>
                     <td th:text="${creador.localidad}">Mostrar localidad</td>
                     <td th:text="${creador.domicilio}">Mostrar domicilio</td>
                     <td th:text="${creador.saldo}">Mostrar saldo</td>
-                    <td><a th:href="@{editar/} + ${creador.id}" th:text="Editar"/></td>
-                    <td><a th:href="@{eliminar(id=${creador.id})}" th:text="Eliminar"/></td>
+                    <td><a th:href="@{/creador/editar/} + ${creador.id}" th:text="Editar"/></td>
+                    <td><a th:href="@{/creador/eliminar(id=${creador.id})}" th:text="Eliminar"/></td>
                     
                 </tr>
             </table>

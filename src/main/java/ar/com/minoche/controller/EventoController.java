@@ -39,12 +39,12 @@ public class EventoController {
     public String editar (Evento evento, Model model){
         evento = eventoService.encontrarEvento(evento);
         model.addAttribute("evento", evento);
-        return "modificar";
+        return "modules/evento/modificar";
     }
     
     @GetMapping("/eliminar")
     public String eliminar(Evento evento){
         eventoService.eliminar(evento);
-        return "redirect:/";
+        return "redirect:/evento/";
     }
 }

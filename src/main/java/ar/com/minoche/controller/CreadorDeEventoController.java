@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@Slf4j
+@Slf4j 
 @RequestMapping("/creador")
 public class CreadorDeEventoController {
     
@@ -20,7 +20,7 @@ public class CreadorDeEventoController {
     @GetMapping("/")
     public String index(Model model) {
         log.info("ejecutando el controlador Spring MVC");
-        model.addAttribute("creadores", creadorDeEventoService.listarCreadoresDeEventos());
+        model.addAttribute("creadores", creadorDeEventoService.listarCreadorDeEventos());
         return "modules/creador/index";
     }
     

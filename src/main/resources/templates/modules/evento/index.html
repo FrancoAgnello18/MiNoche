@@ -25,20 +25,20 @@
                     <th>Lugar</th>
                 </tr>
                 <tr th:each="evento : ${eventos}">
-                    <td th:text="${evento.nombre}">Mostrar nombre</td>
+                    <td th:text="${evento.nombreEvento}">Mostrar nombre</td>
                     <td th:text="${evento.tipo}">Mostrar tipo</td>
-                    <td th:text="${evento.categoría}">Mostrar categoria</td>
+                    <td th:text="${evento.categoria}">Mostrar categoria</td>
                     <td th:text="${evento.fecha}">Mostrar fecha</td>
                     <td th:text="${evento.hora}">Mostrar hora</td>
                     <td th:text="${evento.descripcion}">Mostrar descripcion</td>
                     <td th:text="${evento.cantEntradas}">Mostrar cantidad de entradas</td>
                     <td th:text="${evento.cantReservas}">Mostrar cantidad de reservas</td>
                     <td th:text="${evento.limite}">Mostrar limite</td>
-                    <td th:text="${evento.telefono}">Mostrar telefono</td>
+                    <td th:text="${evento.telefonoEvento}">Mostrar telefono</td>
                     <td th:text="${evento.creadorDeEvento}">Mostrar creador de evento</td>
                     <td th:text="${evento.lugar}">Mostrar lugar</td>
-                    <td><a th:href="@{editar/} + ${evento.id}" th:text="Editar"/></td>
-                    <td><a th:href="@{eliminar(id=${evento.id})}" th:text="Eliminar"/></td>
+                    <td><a th:href="@{/evento/editar/} + ${evento.id}" th:text="Editar"/></td>
+                    <td><a th:href="@{/evento/eliminar(id=${evento.id})}" th:text="Eliminar"/></td>
                     
                 </tr>
             </table>

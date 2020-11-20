@@ -28,8 +28,8 @@
                     <td th:text="${reserva.cliente}">Mostrar Cliente</td>
                     <td th:text="${reserva.pago}">Mostrar Pago</td>
                     
-                    <td><a th:href="@{editar/} + ${reserva.id}" th:text="Editar"/></td>
-                    <td><a th:href="@{eliminar(id=${reserva.id})}" th:text="Eliminar"/></td>
+                    <td><a th:href="@{/reserva/editar/} + ${reserva.id}" th:text="Editar"/></td>
+                    <td><a th:href="@{/reserva/eliminar(id=${reserva.id})}" th:text="Eliminar"/></td>
                 </tr>
             </table>
         </div>

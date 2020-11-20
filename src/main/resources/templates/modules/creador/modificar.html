@@ -8,29 +8,29 @@
         <h1>Datos del Creador De Evento</h1>
         <a th:href="@{/creador/}">Regresar</a>
         <br/>
-        <form th:action="@{/creador/guardar}" method="post" th:object="${creadores}">
+        <form th:action="@{/creador/guardar}" method="post" th:object="${creadorDeEvento}">
             <input type="hidden" name="id" th:field="*{id}"/>
             <br/>
             <label for="nombre">Nombre: </label>
-            <input type="text" name="nombre" th:field="*{nombre}"/>
+            <input type="text" name="nombre" th:field="*{persona.nombre}"/>
             <br/>
             <label for="apellido">Apellido: </label>
-            <input type="text" name="apellido" th:field="*{apellido}"/>
+            <input type="text" name="apellido" th:field="*{persona.apellido}"/>
             <br/>
             <label for="celular">Celular: </label>
-            <input type="tel" name="celular" th:field="*{celular}"/>
+            <input type="tel" name="celular" th:field="*{persona.celular}"/>
             <br/>
             <br/>
             <label for="email">Email: </label>
-            <input type="email" name="email" th:field="*{email}"/>
+            <input type="email" name="email" th:field="*{persona.email}"/>
             <br/>
             <br/>
             <label for="documento">Documento: </label>
-            <input type="number" name="documento" th:field="*{documento}"/>
+            <input type="number" name="documento" th:field="*{persona.documento}"/>
             <br/>
             <br/>
             <label for="contrasenia">Contraseña: </label>
-            <input type="password" name="contrasenia" th:field="*{contrasenia}"/>
+            <input type="password" name="contrasenia" th:field="*{persona.contrasenia}"/>
             <br/>
             <br/>
             <label for="provincia">Provincia: </label>
