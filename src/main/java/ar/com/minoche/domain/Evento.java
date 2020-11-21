@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -35,7 +37,7 @@ public class Evento implements Serializable {
     private String nombreEvento;
     
     @Column
-    private Timestamp fecha;
+    private String fecha;
     
 //    @Column
 //    private int hora;

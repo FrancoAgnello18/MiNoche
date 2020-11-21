@@ -9,7 +9,7 @@ public interface EventoDAO extends CrudRepository<Evento, Long> {
 
     Evento findEventoByFecha(int fecha);
 
-    Evento findEventoByHora(int hora);
+    // Evento findEventoByHora(int hora);
 
     Evento findEventoByTelefonoEvento(String telefonoEvento);
 
