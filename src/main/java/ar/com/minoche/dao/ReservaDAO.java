@@ -11,6 +11,6 @@ public interface ReservaDAO extends CrudRepository<Reserva, Long> {
 
     Reserva findReservaByCodQr(String cod_qr);
 
-    Reserva findReservaByHorario(int horario);
+//    Reserva findReservaByHorario(int horario);
 
 }

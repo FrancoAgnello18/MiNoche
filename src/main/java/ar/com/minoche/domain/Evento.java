@@ -1,10 +1,7 @@
 package ar.com.minoche.domain;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
-import java.util.Date;
 import java.util.List;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,8 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -33,34 +30,34 @@ public class Evento implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column
+    @NotEmpty
     private String nombreEvento;
     
-    @Column
+    @NotNull
     private String fecha;
     
 //    @Column
 //    private int hora;
     
-    @Column
+
     private String telefonoEvento;
     
-    @Column
+    
     private int limite;
     
-    @Column
+    
     private String tipo;
     
-    @Column
+
     private String descripcion;
+
     
-    @Column
     private String categoria;
     
-    @Column
+
     private int cantReservas;
     
-    @Column
+
     private int cantEntradas;
     
     @OneToMany(mappedBy = "evento")

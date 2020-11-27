@@ -30,7 +30,7 @@ public class EventoController {
     }
     
     @PostMapping("/guardar")
-    public String guardar(Evento evento){
+    public String guardar( Evento evento){        
         eventoService.guardar(evento);
         return "redirect:/evento/";
     }

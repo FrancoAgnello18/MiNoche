@@ -28,7 +28,7 @@ public class Reserva implements Serializable {
     private Long id;
     
     @Column
-    private int fecha;
+    private String fecha;
     
     @Column
     private int cantPersonas;
@@ -36,8 +36,8 @@ public class Reserva implements Serializable {
     @Column
     private String codQr;
     
-    @Column
-    private int horario;
+//    @Column
+//    private int horario;
     
     @ManyToOne
     @JoinColumn(name = "id_evento")
